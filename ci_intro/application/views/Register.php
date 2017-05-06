@@ -2,13 +2,14 @@
 <head>
 <title>Insert Data Into Database Using CodeIgniter Form</title>
 <link href='http://fonts.googleapis.com/css?family=Marcellus' rel='stylesheet' type='text/css'/>
-<link rel="stylesheet" type="text/css" href="<?php echo base_url('application/views/ab.css');?>" />
+<link rel="stylesheet" href="<?php echo base_url('assets/style.css');?>">
+
 </head>
 <body>
 
 <div id="container">
 <?php echo form_open('RegisterC'); ?>
-<h1>Insert Data Into Database Using CodeIgniter</h1><hr/>
+<h1>Insert Data Into Database Using CodeIgniter +style</h1><hr/>
 <?php if (isset($message)) { ?>
 <CENTER><h3 style="color:green;">Data inserted successfully</h3></CENTER><br>
 <?php } ?>

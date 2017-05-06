@@ -13,17 +13,35 @@
 <?php if (isset($message)) { ?>
 <CENTER><h3 style="color:green;">Data inserted successfully</h3></CENTER><br>
 <?php } ?>
-<?php echo form_label('Student Name :'); ?> <?php echo form_error('dname'); ?><br />
-<?php echo form_input(array('id' => 'dname', 'name' => 'dname')); ?><br />
+<?php echo form_label('First Name :'); ?> <?php echo form_error('fname'); ?><br />
+<?php echo form_input(array('id' => 'fname', 'name' => 'fname')); ?><br />
 
-<?php echo form_label('Student Email :'); ?> <?php echo form_error('demail'); ?><br />
+<?php echo form_label('Last Name :'); ?> <?php echo form_error('lname'); ?><br />
+<?php echo form_input(array('id' => 'lname', 'name' => 'lname')); ?><br />
+
+<?php echo form_label('Email :'); ?> <?php echo form_error('demail'); ?><br />
 <?php echo form_input(array('id' => 'demail', 'name' => 'demail')); ?><br />
 
-<?php echo form_label('Student Mobile No. :'); ?> <?php echo form_error('dmobile'); ?><br />
+<?php echo form_label('Mobile No. :'); ?> <?php echo form_error('dmobile'); ?><br />
 <?php echo form_input(array('id' => 'dmobile', 'name' => 'dmobile', 'placeholder' => '10 Digit Mobile No.')); ?><br />
 
-<?php echo form_label('Student Address :'); ?> <?php echo form_error('daddress'); ?><br />
-<?php echo form_input(array('id' => 'daddress', 'name' => 'daddress')); ?><br />
+<?php echo form_label('Address 1 :'); ?> <?php echo form_error('Faddress'); ?><br />
+<?php echo form_input(array('id' => 'Faddress', 'name' => 'Faddress')); ?><br />
+
+<?php echo form_label('Address 2 :'); ?> <?php echo form_error('Saddress'); ?><br />
+<?php echo form_input(array('id' => 'Saddress', 'name' => 'Saddress')); ?><br />
+
+<?php echo form_label('City:'); ?> <?php echo form_error('city'); ?><br />
+<?php echo form_input(array('id' => 'city', 'name' => 'city')); ?><br />
+
+<?php echo form_label('User name:'); ?> <?php echo form_error('Uname'); ?><br />
+<?php echo form_input(array('id' => 'Uname', 'name' => 'Uname')); ?><br />
+
+<?php echo form_label('Password:'); ?> <?php echo form_error('pass'); ?><br />
+<?php echo form_input(array('id' => 'pass', 'name' => 'pass')); ?><br />
+
+
+
 
 <?php echo form_submit(array('id' => 'submit', 'value' => 'Submit')); ?>
 <?php echo form_close(); ?><br/>

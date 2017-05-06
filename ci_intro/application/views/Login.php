@@ -72,6 +72,20 @@
 		  font-weight:bold;
 		 
 	  }
+	  button
+	  {
+		  /*;*/
+		  /*margin:48px;*/
+		  /*margin-left:10px;		  */
+		  margin-top:10px;
+		  background-color:25b2d5;
+		  padding:5px 10px 5px 10 px;
+		  border-radius:3px;
+		  border:1px solid #319db8;
+		  color:white;
+		  font-weight:bold;
+		 
+	  }
 	
 	  div#back_form
 	  {   
@@ -98,6 +112,7 @@
     
         <div id="back_header">
            LOGIN
+
         </div>
        
         
@@ -120,7 +135,8 @@
 	                
 	            	</div>
 	            	<div class="col-sm-6" >
-	                <input  style="float:right" type="submit" name="SignIn" onClick="location.href='<?php echo base_url('index.php/RegisterC/reg');?>'" value="SignIn" />
+	            	<button style="float:right" onClick="window.location.href = '<?php echo base_url();?>index.php/RegisterC';return false;">Register</button>
+	                
 	             
 	               
                		</div>
@@ -135,6 +151,13 @@
     
         
     </div> 
+    </div>
+    <div>
+    <!-- redirect to register page -->
+	    <form>
+	    	<button onClick="window.location.href = '<?php echo base_url();?>index.php/RegisterC';return false;">Register</button>
+	    	 
+	    </form>
     </div>
    
 </body>

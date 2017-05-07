@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<form id="form1" name="form1" method="post" action="<?php echo base_url('index.php/CheckD/myDate');?>">
+<form id="form1" name="form1" method="post" action="<?php echo base_url('index.php/CheckD/compareDate');?>">
   <p>
     <label for="CheckIn"></label>
     <input type="Date" name="CheckIn" id="CheckIn" />

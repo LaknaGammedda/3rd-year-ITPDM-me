@@ -14,8 +14,13 @@ class CheckD extends CI_Controller
 	
 	function compareDate()
 	{
-		$startDate= strtotime($_POST['CheckIn']);
-		$endDate= strtotime($_POST['CheckOut']);
+		$this->load->model("Dat_Model");
+
+		$startDate= $_POST['CheckIn'];
+		$endDate= $_POST['CheckOut'];
+		// echo $startDate;
+		// echo $endDate;
+
 
 		if($this->Dat_Model->datee($startDate,$endDate))
 		{

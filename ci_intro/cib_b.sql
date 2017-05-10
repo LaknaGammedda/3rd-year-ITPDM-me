@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2017 at 01:15 PM
+-- Generation Time: May 10, 2017 at 04:06 PM
 -- Server version: 10.1.21-MariaDB
--- PHP Version: 7.0.15
+-- PHP Version: 7.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ci_db`
+-- Database: `cib&b`
 --
 
 -- --------------------------------------------------------
@@ -128,7 +128,7 @@ CREATE TABLE `reservation` (
 
 INSERT INTO `reservation` (`Rid`, `Destination`, `Availability`, `ImagePath`) VALUES
 (1, 'Nuwaraeliya', 'reserved', 'Image/img4.jpg'),
-(2, 'Colombo', 'Not reserved', 'Image/img2.jpg');
+(2, 'Colombo', 'yes', 'Image/img2.jpg');
 
 -- --------------------------------------------------------
 

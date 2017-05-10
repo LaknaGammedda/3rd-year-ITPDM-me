@@ -12,6 +12,12 @@
     <?php
     foreach ($dat as $object) {
       echo $object->Destination.'<br/>';
+      $a=$object->ImagePath;
+      ?>
+      <img src="<?php echo base_url($a);?>">
+
+      <?php
+
     }
 
     echo '<br/><br/><br/>';
@@ -19,6 +25,10 @@
      foreach ($ava as $object1) {
        echo $object1->Availability.'<br/>';
        echo $object1->Destination.'<br/>';
+        $a=$object1->ImagePath;
+      ?>
+       <img src="<?php echo base_url($a);?>">
+      <?php
      }
     ?>
   </div>

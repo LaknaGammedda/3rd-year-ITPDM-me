@@ -10,6 +10,7 @@ class CheckD extends CI_Controller
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('CheckIn','CHECKIN','callback_compareDate');
 		$this->form_validation->set_rules('CheckOut','CHECKOUT','callback_compareDate');
+		$this->form_validation->set_rules('opt','OPT','required');
 	}
 	
 	function compareDate()
@@ -17,18 +18,15 @@ class CheckD extends CI_Controller
 		$this->load->model("Dat_Model");
 
 		$startDate= $_POST['CheckIn'];
-		$endDate= $_POST['CheckOut'];
+		$valuee=$_POST['opt'];
+		
 		// echo $startDate;
 		// echo $endDate;
 
 
-		if($this->Dat_Model->datee($startDate,$endDate))
-		{
-			echo "Successful";
-		}
-		else
-		{
-			echo "Unsuccessful";
-		}
+        $data['dat']=$this->Dat_Model->datee($startDate);
+		$data['ava']=$this->Dat_Model->Avail($valuee);
+		$this->load->view('CDates',$data);
+		
 	}
 }

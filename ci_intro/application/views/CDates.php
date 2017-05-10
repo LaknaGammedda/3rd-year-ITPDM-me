@@ -10,6 +10,11 @@
   <p>
     <label for="CheckIn"></label>
     <input type="Date" name="CheckIn" id="CheckIn" />
+    <label for="opt"></label>
+    <select name="opt" id="opt">
+      <option value="Nuwaraeliya">Nuwaraeliya</option>
+      <option value="Colombo">Colombo</option>
+    </select>
   </p>
   <p>
     <label for="CheckOut"></label>
@@ -19,5 +24,17 @@
     <input type="submit" name="Check" id="Check" value="CDates" />
   </p>
 </form>
+
+   <div id="me">
+    <?php
+    foreach ($dat as $object) {
+      echo $object->Destination.'<br/>';
+    }
+    echo '<br/><br/><br/>';
+    foreach ($ava as $object) {
+      echo $object->Availability.'<br/>';
+    }
+    ?>
+  </div>
 </body>
 </html>

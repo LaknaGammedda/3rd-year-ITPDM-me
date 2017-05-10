@@ -2,6 +2,10 @@
 <head>
 <title>Insert Data Into Database Using CodeIgniter Form</title>
 <link href='http://fonts.googleapis.com/css?family=Marcellus' rel='stylesheet' type='text/css'/>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="<?php echo base_url('assets/style.css');?>">
 
 </head>
@@ -39,6 +43,11 @@
 
 <?php echo form_label('Password:'); ?> <?php echo form_error('pass'); ?><br />
 <?php echo form_input(array('id' => 'pass', 'name' => 'pass')); ?><br />
+
+<select name="selection1" id="selection1">
+    <option value="Renter">Renter</option>
+    <option value="Tourist">Tourist</option>
+  </select>
 
 
 

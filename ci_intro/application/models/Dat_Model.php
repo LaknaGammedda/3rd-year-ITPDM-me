@@ -2,19 +2,39 @@
 
 class Dat_Model extends CI_Model
 {
-    function datee($startDate,$endDate)
+    function datee($startDate)
     {
-       $this->db->where('CheckIn',$startDate);
-       $this->db->where('CheckOut',$endDate);
-       $query=$this->db->get('res');
+       $this->db->select('*');
+       $this->db->from('res');
+       $this->db->where('res.CheckOut <',$startDate);
+       $this->db->join('reservation','res.Rid=reservation.Rid');       
+       $query=$this->db->get();
 
        if($query->num_rows()>0)
        {
-       	 return true;
+       	 return $query->result();
        }
        else
        {
-       	 return false;
+       	 return null;
        }
+    }
+
+    function Avail($valuee)
+    {
+      $this->db->select('*');
+      $this->db->from('reservation');
+      $this->db->where("Availability='Not reserved'" AND 'Destination',$valuee);
+      $query=$this->db->get();
+
+      if($query->num_rows()>0)
+      {
+         return $query->result();
+      }
+
+      else
+      {
+        return null;
+      }
     }
 }

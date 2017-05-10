@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 07, 2017 at 06:06 AM
+-- Generation Time: May 10, 2017 at 01:15 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.0.15
 
@@ -71,8 +71,22 @@ CREATE TABLE `register` (
   `Add2` varchar(20) NOT NULL,
   `City` varchar(20) NOT NULL,
   `Username` varchar(20) NOT NULL,
-  `Password` varchar(20) NOT NULL
+  `Password` varchar(20) NOT NULL,
+  `role` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `register`
+--
+
+INSERT INTO `register` (`Rid`, `firstName`, `lastName`, `Email`, `Telephone`, `Add1`, `Add2`, `City`, `Username`, `Password`, `role`) VALUES
+(1, 'lakna', 'harindie', 'chanddabare@gmail.com', 718163361, '139B1C', 'jagathrd', 'mahargama', 'my1234', 'abc12345', ''),
+(2, 'lakna', 'harindie', 'chanddabare@gmail.com', 718163361, '139B1C', 'jagathrd', 'mahargama', 'my1234', 'abc12345', ''),
+(3, 'lakna', 'harindie', 'chanddabare@gmail.com', 718163361, '139B1C', 'jagathrd', 'mahargama', 'my1234', 'abc12345', ''),
+(4, 'lakna', 'harindie', 'chanddabare@gmail.com', 718163361, '139B1C', 'jagathrd', 'mahargama', 'my1234', 'abc12345', ''),
+(5, 'lakna', 'harindie', 'chanddabare@gmail.com', 718163361, '139B1C', 'jagathrd', 'mahargama', 'my1234', 'abc12345', ''),
+(6, 'lakna', 'harindie', 'chanddabare@gmail.com', 718163361, '139B1C', 'jagathrd', 'mahargama', 'my1234', 'abc12345', ''),
+(7, 'missa', 'mewan', 'chanddabare@gmail.com', 1234567890, '190ABC', 'jagathrd', 'mahargama', '12345ac', 'ABCD123', 'Tourist');
 
 -- --------------------------------------------------------
 
@@ -83,16 +97,38 @@ CREATE TABLE `register` (
 CREATE TABLE `res` (
   `Did` int(11) NOT NULL,
   `CheckIn` date NOT NULL,
-  `CheckOut` date NOT NULL
+  `CheckOut` date NOT NULL,
+  `Rid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `res`
 --
 
-INSERT INTO `res` (`Did`, `CheckIn`, `CheckOut`) VALUES
-(1, '2017-05-17', '2017-05-20'),
-(2, '2017-05-23', '2017-05-24');
+INSERT INTO `res` (`Did`, `CheckIn`, `CheckOut`, `Rid`) VALUES
+(1, '2017-05-01', '2017-05-10', 1),
+(2, '2017-05-01', '2017-05-04', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reservation`
+--
+
+CREATE TABLE `reservation` (
+  `Rid` int(11) NOT NULL,
+  `Destination` varchar(50) NOT NULL,
+  `Availability` varchar(50) NOT NULL,
+  `ImagePath` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `reservation`
+--
+
+INSERT INTO `reservation` (`Rid`, `Destination`, `Availability`, `ImagePath`) VALUES
+(1, 'Nuwaraeliya', 'reserved', 'Image/img4.jpg'),
+(2, 'Colombo', 'Not reserved', 'Image/img2.jpg');
 
 -- --------------------------------------------------------
 
@@ -145,6 +181,12 @@ ALTER TABLE `res`
   ADD PRIMARY KEY (`Did`);
 
 --
+-- Indexes for table `reservation`
+--
+ALTER TABLE `reservation`
+  ADD PRIMARY KEY (`Rid`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -163,12 +205,17 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `register`
 --
 ALTER TABLE `register`
-  MODIFY `Rid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `res`
 --
 ALTER TABLE `res`
   MODIFY `Did` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `reservation`
+--
+ALTER TABLE `reservation`
+  MODIFY `Rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `users`
 --

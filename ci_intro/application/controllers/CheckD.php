@@ -20,13 +20,13 @@ class CheckD extends CI_Controller
 		$startDate= $_POST['CheckIn'];
 		$valuee=$_POST['opt'];
 		
-		// echo $startDate;
+		//echo $valuee;
 		// echo $endDate;
 
 
-        $data['dat']=$this->Dat_Model->datee($startDate);
-		$data['ava']=$this->Dat_Model->Avail($valuee);
-		$this->load->view('CDates',$data);
+  		 $data['dat']=$this->Dat_Model->datee($startDate,$valuee);
+		 $data['ava']=$this->Dat_Model->Avail($valuee);
+		 $this->load->view('date_result',$data);
 		
 	}
 }

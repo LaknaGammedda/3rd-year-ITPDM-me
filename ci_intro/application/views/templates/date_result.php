@@ -25,6 +25,16 @@
   </p>
 </form>
 
-  
+   <div id="me">
+    <?php
+    foreach ($dat as $object) {
+      echo $object->Destination.'<br/>';
+    }
+    echo '<br/><br/><br/>';
+    // foreach ($ava as $object) {
+    //   echo $object->Availability.'<br/>';
+    // }
+    ?>
+  </div>
 </body>
 </html>

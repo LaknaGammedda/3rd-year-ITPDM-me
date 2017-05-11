@@ -21,7 +21,7 @@
     }
 
     echo '<br/><br/><br/>';
-    echo "Availability";
+   
      foreach ($ava as $object1) {
        echo $object1->Availability.'<br/>';
        echo $object1->Destination.'<br/>';

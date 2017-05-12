@@ -154,42 +154,63 @@
      </div>
    </div>
    <div id="B">
-   	<?php foreach ($dat as $object): ?>		
-   	
-     <div id="picA"><img src="<?php echo base_url($object->ImagePath);?>" width="260" height="125"></div>
-     <div id="desA">  <div id="me">
-   
-    </div>
-          <div id= "priceA">
-       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LKR 10 800
-       <p></p>
-<p>
+   	<div id="me">
+    <?php
+    foreach ($dat as $object) {
+    	$des= $object->Destination.'<br/>';
+      	$a=$object->ImagePath;
+    	?>
+    	<div id="picA"><img src="<?php echo base_url($a);?>" width="260" height="125"></div>
+     	<div id="desA"><h3><?php echo $des; ?></h3>
+     	</div>
+
+     	<div id= "priceA">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LKR 10 800
+        <p></p>
+        
+        <p>
          <input type="button" id="BtnA" value=" Book Now " >
        </p>
      </div>
-   </div>
-   <div id="C">
-     <div id="picA"><img src="<?php echo base_url('Image/images (1).jpg');?>" width="260" height="125"></div>
-     <div id="desA">Description about accommodation</div>
-          <div id= "priceA">
-       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LKR 10 800
-       <p></p>
-<p>
+     </div>
+
+
+
+    <?php
+
+    }
+	?>
+	<?php
+    foreach ($ava as $object1) {
+    	$des= $object1->Destination.'<br/>';
+      	$a=$object1->ImagePath;
+    	?>
+    	<div id="picA"><img src="<?php echo base_url($a);?>" width="260" height="125"></div>
+     	<div id="desA"><h3><?php echo $des; ?></h3>
+     	</div>
+
+     	<div id= "priceA">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LKR 10 800
+        <p></p>
+        
+        <p>
          <input type="button" id="BtnA" value=" Book Now " >
        </p>
      </div>
-   </div>
-   <div id="D">
-     <div id="picA"><img src="<?php echo base_url('Image/images.jpg');?>" width="260" height="125"></div>
-     <div id="desA">Description about accommodation</div>
-          <div id= "priceA">
-       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LKR 10 800
-       <p></p>
-<p>
-         <input type="button" id="BtnA" value=" Book Now " >
-       </p>
      </div>
-   </div>
+
+
+    <?php
+
+    }
+	?>
+
+
+
+
+    
+  
+     
  </div> <!-- Accomodation Catalogue-->
  <footer>End of the page</footer>
  </div>

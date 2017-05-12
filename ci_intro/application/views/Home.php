@@ -131,7 +131,7 @@ function carousel() {
             </div>
 
             <div class="col-md-3" align="center">   
-                <input type="button" class="btn btn-primary btn-sm" name="btnSearch" id="btnSearch" value="Submit" />
+                <input type="submit" class="btn btn-primary btn-sm" name="btnSearch" id="btnSearch" value="Submit" />
             </div>
     
         </div>

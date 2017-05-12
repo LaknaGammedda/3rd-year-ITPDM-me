@@ -29,7 +29,8 @@ $ip_vote_rate = $blog_vote_ip_rate;
                     for ($i = 0; $i <= floor($overall_vote_rate); $i++) {
                         $stars .= '<div class="star" id="' . $i . '"></div>';
                     }
-                    //THE OVERALL RATING (THE OPAQUE STARS)
+                    //THE OVERALL RATING (THE OPAQUE STAR 
+                    echo $blog_vote_overall_dec_rate;
                     echo '<div class="r"><div class="rating">' . $stars . '</div>';
 
                     //THE TRANSPARENT STARS (OPAQUE STARS WILL COVER AS MANY STARS AS THE RATING REPRESENTS)
@@ -45,7 +46,22 @@ $ip_vote_rate = $blog_vote_ip_rate;
                     echo '</div>';
                     ?>
                    
-            </div>
+<!-- view rating as stars  -->
+
+            <?php
+                $starNumber=$blog_vote_overall_dec_rate;
+                for($x=1;$x<=$starNumber;$x++) {
+                    echo '<img src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678064-star-128.png" style="width:35px" />';
+                }
+                if (strpos($starNumber,'.')) {
+                    echo '<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/256/Star-Half-Full.png"  style="width:35px"/>';
+                    $x++;
+                }
+                while ($x<=5) {
+                    echo '<img src="http://time-static-shared.s3-website-us-east-1.amazonaws.com/interactives/how_american_are_you/images/white-star-md.png" style="width:35px" />';
+                    $x++;
+                }
+            ?>
         </div>
     </body>
 </html>

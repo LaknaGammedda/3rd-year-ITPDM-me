@@ -10,9 +10,9 @@ $ip_vote_rate = $blog_vote_ip_rate;
         <meta charset="UTF-8"/>
         <title>Voting System</title>
         <!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
-        <link type="text/css" rel="stylesheet" href="http://localhost:8090/comment/assets/css/blog_rating.css"/>
-        <script type= 'text/javascript' src="http://localhost:8090/comment/assets/js/jquery-1.9.1.min.js"></script>
-        <script type= 'text/javascript' src="http://localhost:8090/comment/assets/js/blog_rating.js"></script>
+        <link type="text/css" rel="stylesheet" href="http://localhost:8090/ci_intro/assets/css/blog_rating.css"/>
+        <script type= 'text/javascript' src="http://localhost:8090/ci_intro/assets/js/jquery-1.9.1.min.js"></script>
+        <script type= 'text/javascript' src="http://localhost:8090/ci_intro/assets/js/blog_rating.js"></script>
     </head>
     <body>
         <div class='singlepost'>

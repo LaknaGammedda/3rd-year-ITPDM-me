@@ -54,6 +54,7 @@ class BlogModel extends CI_Model {
             $rating = round($rating, 1);
             $results['vote_rate'] = $rating;
             return $results;
+            //ne
         }
     }
  

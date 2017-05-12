@@ -18,7 +18,7 @@
 	  $this->form_validation->set_rules('facility' , 'Facility','required');
 
 	  if ($this->form_validation->run()===FALSE) {
-	  	$this->load->view('Register',$data);
+	  	$this->load->view('RegisterRent',$data);
 	  }
 	  else{
 	  	$this->RegisterModel->make_rent();

@@ -8,17 +8,17 @@ class BlogController extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->load->model('blogmodel', 'blog');
+        $this->load->model('blogmodel');
     }
 
     function index() {
         //the hard-coded blog id value 1 should come from UI
         $blog_id = 1;
-        $vote_results = $this->blog->get_blog_rating($blog_id);
+        $vote_results = $this->blogmodel->get_blog_rating($blog_id);
         $data['blog_vote_overall_rows'] = $vote_results['vote_rows'];
         $data['blog_vote_overall_rate'] = $vote_results['vote_rate'];
         $data['blog_vote_overall_dec_rate'] = $vote_results['vote_dec_rate'];
-        $vote_results = $this->blog->get_blog_rating_from_ip($blog_id);
+        $vote_results = $this->blogmodel->get_blog_rating_from_ip($blog_id);
         $data['blog_vote_ip_rate'] = $vote_results['vote_rate'];
         $this->load->view('blog', $data);
     }
@@ -27,7 +27,7 @@ class BlogController extends CI_Controller {
         if (isset($_POST)) {
             $blog_id = $_POST['blog_id'];
             $rating = $_POST['rating'];
-            $vote_results = $this->blog->rate_blog($blog_id, $rating);
+            $vote_results = $this->blogmodel->rate_blog($blog_id, $rating);
             $blog_vote_overall_rows = $vote_results['vote_rows'];
             $blog_vote_overall_rate = $vote_results['vote_rate'];
             $blog_vote_overall_dec_rate = $vote_results['vote_dec_rate'];

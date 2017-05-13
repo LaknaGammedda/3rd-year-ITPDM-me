@@ -17,19 +17,41 @@
          $this->load->model("Post_model");
        	$data['title'] = 'Create Post';
        // $this-> form_validation-> set_rules('name', 'Name', 'required');
-        $this->form_validation->set_rules('title', 'Title', 'required');
-       	$this->form_validation->set_rules('body', 'Body', 'required');
+        // $this->form_validation->set_rules('title', 'Title', 'required');
+       	// $this->form_validation->set_rules('body', 'Body', 'required');
+         $this->load->view('post/create',$data);
+       //  if($this->form_validation->run()=== FALSE){
+       //    $this->load->view('post/create',$data);
+       //  }
+       //  else{
+       //    $this->Post_model->create_post();
+       //    redirect(posts);                     
+       // }
 
-        if($this->form_validation->run()=== FALSE){
-          $this->load->view('post/create',$data);
-        }
-        else{
-          $this->Post_model->create_post();
-          redirect(posts);                     
+
        }
+      public function add(){
+         $this->load->model("Post_model");
+        $data['title'] = 'Create Post';
+       // $this-> form_validation-> set_rules('name', 'Name', 'required');
+        // $this->form_validation->set_rules('title', 'Title', 'required');
+        // $this->form_validation->set_rules('body', 'Body', 'required');
+         $this->Post_model->create_post();
+          redirect(posts); 
+       //  if($this->form_validation->run()=== FALSE){
+       //    $this->load->view('post/create',$data);
+       //  }
+       //  else{
+       //    $this->Post_model->create_post();
+       //    redirect(posts);                     
+       // }
 
 
-       }
+       }      
+
+
+
+
        public function delete($id){
          $this->load->model("Post_model");
          $this->Post_model->delete_post($id);

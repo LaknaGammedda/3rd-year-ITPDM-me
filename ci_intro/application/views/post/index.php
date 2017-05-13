@@ -4,7 +4,7 @@
 	<small class="post-date"> Posted on: <?php echo $post['time']; ?></small><br>
 	<?php echo $post['comment']; ?>
 	<hr>
-	<a class="btn btn-default pull-left" href="posts/edit/<?php echo $post['slug']; ?>">Edit</a>
+	<a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Posts/Edit/'.$post['slug']) ?>">Edit</a>
 <?php echo form_open('/posts/delete/'.$post['id']); ?>
    <input type="submit" value="Delete" class="btn btn-danger">
 </form>

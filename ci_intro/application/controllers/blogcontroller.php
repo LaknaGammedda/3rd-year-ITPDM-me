@@ -21,7 +21,26 @@ class BlogController extends CI_Controller {
         $vote_results = $this->blogmodel->get_blog_rating_from_ip($blog_id);
         $data['blog_vote_ip_rate'] = $vote_results['vote_rate'];
         $this->load->view('blog', $data);
+        $this->load->view('rating/x/index');
     }
+
+function rate_s() {
+    $a=$_POST['rate'];
+    $ip=0;
+    $blogid=1;
+            $data = array(
+                   //'name' => $this -> input->post('name'),
+                     'blog_vote'=>$a,
+                    'blog_id' => $blogid,
+                    'ip_address'=>$ip
+                );
+     $this-> db-> insert('blog_vote' , $data);
+    
+
+       
+    }
+
+
 
     function rate_blog() {
         if (isset($_POST)) {

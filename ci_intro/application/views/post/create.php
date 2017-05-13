@@ -13,7 +13,7 @@
   
   <?php echo validation_errors(); ?>
 
-<?php echo form_open('posts/create'); ?>
+<?php echo form_open('posts/add'); ?>
   <div class="form-group">
   	<label>Rate Your Stay  </label>
   </div>

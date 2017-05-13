@@ -185,7 +185,7 @@ input[type="Button"]
 
 #imageHeader
 {
-		-webkit-border-radius:4px;
+	-webkit-border-radius:4px;
 	-webkit-box-shadow:3px 3px 30px #03C;
 	width:85%;
 	height:100%;
@@ -208,7 +208,7 @@ input[type="Button"]
 img.current,img.current:hover
 {
 	background:#333;
-			background:-moz-linear-gradient(top,#000,#666);
+	background:-moz-linear-gradient(top,#000,#666);
 	background:-webkit-gradient(linear,left top,left bottom from(#000),to(#666));
 	color:#f63;
 	cursor:default;

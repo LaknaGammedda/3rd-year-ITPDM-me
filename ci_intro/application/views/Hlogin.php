@@ -3,9 +3,12 @@
 <head>
    <title>Webslesson | <?php echo $title;?></title>
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ 
 </head>
 
 <body>
+	<div>
+    
 	<div class="container">
 		<br/><br/><br/>
 		 <form method="post" action="<?php echo base_url('index.php/Mylogin/login_validation');?>">

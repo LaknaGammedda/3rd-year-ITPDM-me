@@ -1,0 +1,134 @@
+body {
+   background:-moz-linear-gradient(#666,#69C,#CCC,#963);
+  background:-webkit-linear-gradient(#CFC);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+.container {
+  position: relative;
+  margin: 0 auto;
+  width: 94%;
+  max-width: 1100px;
+  font-family: helvetica, sans-serif;
+ 
+}
+.content {
+  position: relative;
+  padding-top: 80px;
+}
+.content p {
+  margin-bottom: 10px;
+}
+#header {
+  z-index: 2;
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  font-weight:600;
+  line-height: 60px;
+  background: #222;
+  color:#003;
+  background:-moz-linear-gradient(#666,#69C,#CCC,#963);
+  background:-webkit-linear-gradient(#666,#69C,#CCC,#963);
+}
+#logo
+{
+	float:left;
+	padding-left:5px;
+	
+}
+#header h1 {
+  top: 0px;
+  margin: 0px;
+  margin-top:5px;
+  text-transform: uppercase;
+  font-weight:bold;
+  font-family:"Monotype Corsiva";
+  font-size:38px;
+ 
+}
+
+
+#nav {
+  position: absolute;
+  right: 0;
+  top: -15px;
+  height: 60px;
+
+}
+#nav ul li {
+  float: left;
+  list-style: none;
+}
+#nav ul li a {
+  display: block;
+  margin-top:10px;
+  color:#003;
+  font-size:18px;
+  font-family:"Sitka Subheading";
+  text-decoration: none;
+  padding: 0 10px;
+}
+
+
+
+@media (max-width: 599px) {
+  #header .container {
+    width: 100%;
+  }
+  #header h1 {
+    padding-left: 3%;
+  }
+  #nav {
+    width: 100%;
+    top: 60px;
+  }
+  #nav:before {
+    content: '\2630';
+    display: block;
+    position: absolute;
+    right: 3%;
+    top: -50px;
+    line-height: 40px;
+    font-size: 1.4em;
+    cursor: pointer;
+  }
+  #nav ul {
+    background: #222;
+    width: 100%;
+    margin: 0px;
+  }
+  #nav ul li {
+    float: none;
+  }
+  #nav ul li a {
+    padding: 10px 3%;
+    line-height: 20px;
+    border-top: 1px solid #333;
+  }
+  
+  
+}
+
+#footer
+{
+  
+  background: -webkit-linear-gradient(#666,#369,#CCC);
+  width:100%;
+  height: 50px;
+  
+}
+#footer p
+{
+  margin-top:10px;
+  text-align:center;
+  font-family:"Times New Roman", Times, serif;
+  color:#003;
+  font-weight:800;
+  font-size:16px;
+
+}

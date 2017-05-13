@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4
--- http://www.phpmyadmin.net
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 12, 2017 at 12:33 PM
--- Server version: 5.6.12-log
--- PHP Version: 5.4.12
+-- Host: 127.0.0.1
+-- Generation Time: May 13, 2017 at 06:38 AM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 7.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,13 +14,11 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `b&b`
 --
-CREATE DATABASE IF NOT EXISTS `b&b` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `b&b`;
 
 -- --------------------------------------------------------
 
@@ -28,13 +26,21 @@ USE `b&b`;
 -- Table structure for table `blog_vote`
 --
 
-CREATE TABLE IF NOT EXISTS `blog_vote` (
-  `vote_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `blog_vote` float unsigned NOT NULL,
-  `blog_id` int(10) unsigned NOT NULL,
-  `ip_address` varchar(20) COLLATE latin1_general_ci DEFAULT NULL,
-  PRIMARY KEY (`vote_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=1 ;
+CREATE TABLE `blog_vote` (
+  `vote_id` int(10) UNSIGNED NOT NULL,
+  `blog_vote` float UNSIGNED NOT NULL,
+  `blog_id` int(10) UNSIGNED NOT NULL,
+  `ip_address` varchar(20) COLLATE latin1_general_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+--
+-- Dumping data for table `blog_vote`
+--
+
+INSERT INTO `blog_vote` (`vote_id`, `blog_vote`, `blog_id`, `ip_address`) VALUES
+(1, 3, 1, NULL),
+(2, 4, 1, NULL),
+(3, 3, 1, '0');
 
 -- --------------------------------------------------------
 
@@ -42,25 +48,20 @@ CREATE TABLE IF NOT EXISTS `blog_vote` (
 -- Table structure for table `posts`
 --
 
-CREATE TABLE IF NOT EXISTS `posts` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `posts` (
+  `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `slug` varchar(255) NOT NULL,
   `comment` text NOT NULL,
-  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `posts`
 --
 
 INSERT INTO `posts` (`id`, `title`, `slug`, `comment`, `time`) VALUES
-(1, 'Post_One', 'P_one', 'hello thereeee', '2017-04-23 14:45:40'),
-(2, 'Post_two', 'P_two', 'I really impressed', '2017-04-23 14:45:40'),
-(3, 'Post_three', 'Post_three', 'this is already edited', '2017-05-01 03:59:17'),
-(12, 'Post_four', 'Post_four', 'greate', '2017-05-07 07:02:22'),
-(13, 'adf', 'adf', 'mdsfm', '2017-05-12 08:00:03');
+(1, 'Post_One', 'Post_One', 'hello ', '2017-04-23 14:45:40');
 
 -- --------------------------------------------------------
 
@@ -68,8 +69,8 @@ INSERT INTO `posts` (`id`, `title`, `slug`, `comment`, `time`) VALUES
 -- Table structure for table `rentouts`
 --
 
-CREATE TABLE IF NOT EXISTS `rentouts` (
-  `accomodationId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `rentouts` (
+  `accomodationId` int(11) NOT NULL,
   `renterName` varchar(25) NOT NULL,
   `address1` varchar(255) NOT NULL,
   `address2` varchar(255) NOT NULL,
@@ -77,9 +78,8 @@ CREATE TABLE IF NOT EXISTS `rentouts` (
   `price` float NOT NULL,
   `facility` text NOT NULL,
   `NumberOfRooms` int(11) NOT NULL,
-  `path` varchar(125) NOT NULL,
-  PRIMARY KEY (`accomodationId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
+  `path` varchar(125) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `rentouts`
@@ -108,6 +108,47 @@ INSERT INTO `rentouts` (`accomodationId`, `renterName`, `address1`, `address2`, 
 (20, 'dhsfhj', 'sdfhdf', 'sdhfd', 'ehfhe', 52, 'gsfhsgf', 2, './images/387659135ffedb755.jpg'),
 (21, 'jdsfhjs', 'sdfhdf', 'dsfds', 'dsfds', 6533, 'sdfhjd', 1, './images/2142459156a65c7c92.jpg');
 
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `blog_vote`
+--
+ALTER TABLE `blog_vote`
+  ADD PRIMARY KEY (`vote_id`);
+
+--
+-- Indexes for table `posts`
+--
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `rentouts`
+--
+ALTER TABLE `rentouts`
+  ADD PRIMARY KEY (`accomodationId`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `blog_vote`
+--
+ALTER TABLE `blog_vote`
+  MODIFY `vote_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `rentouts`
+--
+ALTER TABLE `rentouts`
+  MODIFY `accomodationId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2017 at 09:36 AM
+-- Generation Time: May 14, 2017 at 03:31 PM
 -- Server version: 10.1.21-MariaDB
--- PHP Version: 7.0.15
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -42,7 +42,8 @@ INSERT INTO `blog_vote` (`vote_id`, `blog_vote`, `blog_id`, `ip_address`) VALUES
 (2, 4, 1, NULL),
 (3, 3, 1, '0'),
 (4, 3, 2, NULL),
-(5, 4, 2, NULL);
+(5, 4, 2, NULL),
+(6, 2, 1, '0');
 
 -- --------------------------------------------------------
 
@@ -92,6 +93,13 @@ CREATE TABLE `posts` (
   `comment` text NOT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `posts`
+--
+
+INSERT INTO `posts` (`id`, `title`, `slug`, `comment`, `time`) VALUES
+(1, 'post1', '1', 'heyyyyyyyyyyyyyyyyyyyyy', '2017-05-14 13:09:15');
 
 -- --------------------------------------------------------
 
@@ -221,9 +229,9 @@ CREATE TABLE `reservation` (
 INSERT INTO `reservation` (`Rid`, `Destination`, `Availability`, `ImagePath`, `LodgeName`, `Address1`, `Address2`, `NumRooms`, `Price`) VALUES
 (1, 'Nuwara Eliya', 'No', 'Image/img3.jpg', 'Heritance Tea Factory', 'No:340A', 'welimada', 1, 5020),
 (2, 'Colombo', 'yes', 'Image/img2.jpg', 'Cinnamon Lake', 'No:130A', 'Kollupitiya', 2, 10500),
-(3, 'Colombo', 'Yes', 'Image/img6.jpg', 'Kandalama', 'No:132', 'Rajaweediya', 2, 7000),
-(4, 'Colombo', 'Yes', 'Image/img4.jpg', 'Villa Ocean', 'No:139B', 'Temple Rd.', 2, 6980),
-(5, 'Nuwara Eliya', 'Yes', 'Image/img8.jpg', 'Golf Green Bungalow', 'No:123C', 'Grand Hotel Rd.', 2, 8024);
+(3, 'Colombo', 'yes', 'Image/img6.jpg', 'Kandalama', 'No:132', 'Rajaweediya', 2, 7000),
+(4, 'Colombo', 'yes', 'Image/img4.jpg', 'Villa Ocean', 'No:139B', 'Temple Rd.', 2, 6980),
+(5, 'Nuwara Eliya', 'yes', 'Image/img8.jpg', 'Golf Green Bungalow', 'No:123C', 'Grand Hotel Rd.', 2, 8024);
 
 -- --------------------------------------------------------
 
@@ -313,7 +321,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `blog_vote`
 --
 ALTER TABLE `blog_vote`
-  MODIFY `vote_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `vote_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `login`
 --

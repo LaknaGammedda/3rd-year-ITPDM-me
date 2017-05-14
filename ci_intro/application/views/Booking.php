@@ -236,7 +236,7 @@ mysqli_query($db,"set character_set_results='utf8'");
 		        <p></p>
 		        
 		        <p>
-		        	<a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/index/'.$des) ?>">Book Now </a>	
+		        	<a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/index/'.$id) ?>">Book Now </a>	
 		         	<a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/viewAll/'.$id) ?>">View all </a>
 		       </p>
      	</div>
@@ -299,7 +299,7 @@ mysqli_query($db,"set character_set_results='utf8'");
 		        </p>
 		        
 		        <p>
-		        	<a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/index/'.$des) ?>">Book Now </a>	
+		        	<a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/index/'.$id) ?>">Book Now </a>	
 		        	<a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/viewAll/'.$id) ?>">View all </a>
 		       </p>
      	</div>

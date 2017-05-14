@@ -157,6 +157,9 @@ mysqli_query($db,"set character_set_results='utf8'");
  <div id="body">
  <p></p>
  <p><em>&nbsp;&nbsp;Hotels near Kandy , Srilanka</em></p>
+
+
+
    <div id="A">
      
      <div id="picA"><img src="<?php echo base_url('Image/images (2).jpg');?>" width="260" height="125"></div>
@@ -173,14 +176,25 @@ mysqli_query($db,"set character_set_results='utf8'");
        </p>
      </div>
    </div>
-   <div id="B">
-   	<div id="me">
+
+
+
+
+
+
+
+
+  
+  
     <?php
     foreach ($dat as $object) {
     	$des= $object->Destination.'<br/>';
       	$a=$object->ImagePath;
+      	$name=$object->LodgeName;
       	$id=$object->Rid;
     	?>
+    	 
+   
     	<div id="picA"><img src="<?php echo base_url($a);?>" width="260" height="125"></div>
      	<div id="desA"><h3><?php echo $des; ?></h3>
      		<?php
@@ -218,78 +232,78 @@ mysqli_query($db,"set character_set_results='utf8'");
      	</div>
 
      	<div id= "priceA">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LKR 10 800
-        <p></p>
-        
-        <p>
-        	<a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/index/'.$des) ?>">Book Now </a>	
-         
-       </p>
-     </div>
-     </div>
-
-
-
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LKR 10 800
+		        <p></p>
+		        
+		        <p>
+		        	<a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/index/'.$des) ?>">Book Now </a>	
+		         	<a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/viewAll/'.$id) ?>">View all </a>
+		       </p>
+     	</div>
     <?php
 
     }
 	?>
+	
+
+	
 	<?php
     foreach ($ava as $object1) {
     	$des= $object1->Destination;
       	$a=$object1->ImagePath;
       	$id=$object1->Rid;
+      	$name=$object1->LodgeName;
     	?>
     	<div id="picA"><img src="<?php echo base_url($a);?>" width="260" height="125"></div>
      	<div id="desA"><h3><?php echo $des; ?></h3>
-     	<?php
-        	$id=$object1->Rid;
-        	$sql = 'SELECT COUNT(DISTINCT(vote_id)) total_rows,IFNULL(SUM(blog_vote),0) total_rating, blog_id
-            FROM blog_vote 
-            WHERE blog_id='.$id.' LIMIT 1';
-            	$result3 = $db->query($sql);
-              	$row =$result3->fetch_assoc();
-		        
-		        $total_rows = $row['total_rows'];
-		        $total_rating = $row['total_rating'];
-		        $results['vote_rows'] = $total_rows;
-		        $rating = 0;
-		        if ($total_rows > 0) {
-		            $rating = $total_rating / $total_rows;
-		        }
-		        $dec_rating = round($rating, 1);
-		        //echo  $dec_rating;
+	     	<?php
+	        	$id=$object1->Rid;
+	        	$sql = 'SELECT COUNT(DISTINCT(vote_id)) total_rows,IFNULL(SUM(blog_vote),0) total_rating, blog_id
+	            FROM blog_vote 
+	            WHERE blog_id='.$id.' LIMIT 1';
+	            	$result3 = $db->query($sql);
+	              	$row =$result3->fetch_assoc();
+			        
+			        $total_rows = $row['total_rows'];
+			        $total_rating = $row['total_rating'];
+			        $results['vote_rows'] = $total_rows;
+			        $rating = 0;
+			        if ($total_rows > 0) {
+			            $rating = $total_rating / $total_rows;
+			        }
+			        $dec_rating = round($rating, 1);
+			        //echo  $dec_rating;
 
-                $starNumber=$dec_rating;
-                for($x=1;$x<=$starNumber;$x++) {
-                    echo '<img src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678064-star-128.png" style="width:35px" />';
-                }
-                if (strpos($starNumber,'.')) {
-                    echo '<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/256/Star-Half-Full.png"  style="width:35px"/>';
-                    $x++;
-                }
-                while ($x<=5) {
-                    echo '<img src="http://time-static-shared.s3-website-us-east-1.amazonaws.com/interactives/how_american_are_you/images/white-star-md.png" style="width:35px" />';
-                    $x++;
-                }
-           
-			?>
+	                $starNumber=$dec_rating;
+	                for($x=1;$x<=$starNumber;$x++) {
+	                    echo '<img src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678064-star-128.png" style="width:35px" />';
+	                }
+	                if (strpos($starNumber,'.')) {
+	                    echo '<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/256/Star-Half-Full.png"  style="width:35px"/>';
+	                    $x++;
+	                }
+	                while ($x<=5) {
+	                    echo '<img src="http://time-static-shared.s3-website-us-east-1.amazonaws.com/interactives/how_american_are_you/images/white-star-md.png" style="width:35px" />';
+	                    $x++;
+	                }
+	           
+				?>
 
 
      	</div>
 
      	<div id= "priceA">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LKR 10 800
-        <p>
-        	
-        </p>
-        
-        <p>
-        	<a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/index/'.$des) ?>">Book Now </a>	
-        
-       </p>
-     </div>
-     </div>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LKR 10 800
+		        <p>
+		        	
+		        </p>
+		        
+		        <p>
+		        	<a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/index/'.$des) ?>">Book Now </a>	
+		        	<a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/viewAll/'.$id) ?>">View all </a>
+		       </p>
+     	</div>
+    
 
 
     <?php
@@ -299,8 +313,6 @@ mysqli_query($db,"set character_set_results='utf8'");
     
 
 	?>
-
-
 
 
 

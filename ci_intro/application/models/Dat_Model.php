@@ -5,7 +5,7 @@ class Dat_Model extends CI_Model
     function datee($startDate,$des)
     {
 
-      $No="reserved";
+      $No="No";
 
        // $this->db->select('*');
        // $this->db->from('res');
@@ -48,4 +48,28 @@ class Dat_Model extends CI_Model
         return $query->result();
       }
     }
+
+
+    function viewAll($des)
+    {
+      // echo $des;
+     $query=$this->db->query("SELECT * FROM reservation WHERE Rid='".$des."' ");
+
+      // $query=$this->db->get();
+
+      if($query->num_rows()>0)
+      {
+        // echo "yes";
+         return $query->result();
+      }
+      else
+      {
+        
+       return $query->result();
+      }
+    }
+
+
+
+
 }

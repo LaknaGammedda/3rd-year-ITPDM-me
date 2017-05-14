@@ -31,6 +31,7 @@
       		if (move_uploaded_file($_FILES['pic']['tmp_name'], $url)) 
       			
       		    $this-> RegisterModel->make_rent($url);
+      		echo "Successfully added your lodge" ;
 	  	//$this-> load->view('post/lodgeAddSucess');
 	  }
    }

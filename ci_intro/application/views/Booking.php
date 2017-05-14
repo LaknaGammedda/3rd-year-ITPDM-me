@@ -182,7 +182,7 @@
 	?>
 	<?php
     foreach ($ava as $object1) {
-    	$des= $object1->Destination.'<br/>';
+    	$des= $object1->Destination;
       	$a=$object1->ImagePath;
     	?>
     	<div id="picA"><img src="<?php echo base_url($a);?>" width="260" height="125"></div>
@@ -194,7 +194,8 @@
         <p></p>
         
         <p>
-         <input type="button" id="BtnA" value=" Book Now " >
+        	<a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/index/'.$des) ?>">Book Now </a>	
+        
        </p>
      </div>
      </div>

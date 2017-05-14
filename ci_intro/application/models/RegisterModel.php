@@ -18,13 +18,13 @@ $availabilty='yes';
 			
 				   //'name' => $this -> input->post('name'),
 				//'renterName'=>$this-> input-> post('name'),
-				'city'=>$this-> input-> post('city'),
+				'Destination'=>$this-> input-> post('city'),
 				'Availability'=> $availabilty,				
 				'ImagePath'=> $url,
 				'LodgeName'=>$this-> input->post('lname'),
 				'address1'=>$this-> input-> post('address1'),
 				'address2'=>$this-> input-> post('address2'),
-				'NumberOfRooms'=>$this-> input-> post('title'),
+				'NumRooms'=>$this-> input-> post('select'),
 				'price'=>$this-> input-> post('price')
 				
 				

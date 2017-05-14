@@ -10,7 +10,7 @@
   <div class="container">
     <h2><?= $title ?></h2>
     <?php echo validation_errors(); ?>
-<?php echo form_open('RegisterCntrol/create'); ?>
+<?php echo form_open_multipart('RegisterCntrol/create'); ?>
   <!--<div class="form-group">
     <label>Renter Name :</label>
     <input type="text" class="form-control" name="name"/>
@@ -53,7 +53,9 @@
 <p> </p>
  
 <label>Images :</label>
-<?php echo form_upload('pic');?>
+
+     <?php echo form_upload('pic');?>
+
  <br> 
 <p> </p>
   <button type="submit" class="btn btn-default" name="btnAdd">Add</button> 

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2017 at 06:41 AM
+-- Generation Time: May 14, 2017 at 09:36 AM
 -- Server version: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- PHP Version: 7.0.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -181,16 +181,20 @@ CREATE TABLE `res` (
   `Did` int(11) NOT NULL,
   `CheckIn` date NOT NULL,
   `CheckOut` date NOT NULL,
-  `Rid` int(11) NOT NULL
+  `Rid` int(11) NOT NULL,
+  `TeleNo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `res`
 --
 
-INSERT INTO `res` (`Did`, `CheckIn`, `CheckOut`, `Rid`) VALUES
-(1, '2017-05-01', '2017-05-10', 1),
-(2, '2017-05-01', '2017-05-04', 2);
+INSERT INTO `res` (`Did`, `CheckIn`, `CheckOut`, `Rid`, `TeleNo`) VALUES
+(1, '2017-05-01', '2017-05-10', 1, 718164462),
+(2, '2017-05-01', '2017-05-04', 2, 777366982),
+(3, '2017-05-03', '2017-05-05', 3, 711572422),
+(4, '2017-05-11', '2017-05-12', 4, 724566710),
+(5, '2017-05-12', '2017-05-16', 5, 782456172);
 
 -- --------------------------------------------------------
 
@@ -202,16 +206,24 @@ CREATE TABLE `reservation` (
   `Rid` int(11) NOT NULL,
   `Destination` varchar(50) NOT NULL,
   `Availability` varchar(50) NOT NULL,
-  `ImagePath` varchar(100) NOT NULL
+  `ImagePath` varchar(100) NOT NULL,
+  `LodgeName` varchar(100) NOT NULL,
+  `Address1` varchar(50) NOT NULL,
+  `Address2` varchar(60) NOT NULL,
+  `NumRooms` int(11) NOT NULL,
+  `Price` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `reservation`
 --
 
-INSERT INTO `reservation` (`Rid`, `Destination`, `Availability`, `ImagePath`) VALUES
-(1, 'Nuwara Eliya', 'reserved', 'Image/img4.jpg'),
-(2, 'Colombo', 'yes', 'Image/img2.jpg');
+INSERT INTO `reservation` (`Rid`, `Destination`, `Availability`, `ImagePath`, `LodgeName`, `Address1`, `Address2`, `NumRooms`, `Price`) VALUES
+(1, 'Nuwara Eliya', 'No', 'Image/img3.jpg', 'Heritance Tea Factory', 'No:340A', 'welimada', 1, 5020),
+(2, 'Colombo', 'yes', 'Image/img2.jpg', 'Cinnamon Lake', 'No:130A', 'Kollupitiya', 2, 10500),
+(3, 'Colombo', 'Yes', 'Image/img6.jpg', 'Kandalama', 'No:132', 'Rajaweediya', 2, 7000),
+(4, 'Colombo', 'Yes', 'Image/img4.jpg', 'Villa Ocean', 'No:139B', 'Temple Rd.', 2, 6980),
+(5, 'Nuwara Eliya', 'Yes', 'Image/img8.jpg', 'Golf Green Bungalow', 'No:123C', 'Grand Hotel Rd.', 2, 8024);
 
 -- --------------------------------------------------------
 
@@ -326,12 +338,12 @@ ALTER TABLE `rentouts`
 -- AUTO_INCREMENT for table `res`
 --
 ALTER TABLE `res`
-  MODIFY `Did` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Did` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `Rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `users`
 --

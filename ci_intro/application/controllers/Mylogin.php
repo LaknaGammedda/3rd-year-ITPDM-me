@@ -15,7 +15,7 @@ function login()
 function login_validation()
 
 {
-    echo "hey";
+   // Add validation rules to the username and password
     $this->load->library('form_validation');
 	  $this->form_validation->set_rules('username','Username','required');
     $this->form_validation->set_rules('pass','Password','required');
@@ -25,14 +25,14 @@ if($this->form_validation->run())
    $username= $this->input->post('username');
    $password= $this->input->post('pass');
    $this->load->model('Login_model');
-   // echo "in forvalidation";
+  
    if($this->Login_model->can_login($username,$password))
    {
    	 $session_data= $arrayName = array('username' =>$username);
 
    	 $this->session->set_userdata($session_data);
-     echo "sesson created";
-     //echo $this->session->userdata('username');
+     echo "session created";
+     
    	 redirect(base_url('index.php/Mylogin/enter'));
    }
    else

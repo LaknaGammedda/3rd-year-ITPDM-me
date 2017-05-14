@@ -2,7 +2,7 @@
    /**
    * 
    */
-   class ClassName extends RegisterModel
+   class RegisterModel extends CI_Model
    {
    	
    	
@@ -11,20 +11,25 @@
    		 parent::__construct();
    	}
  
-	public function make_rent(){
+	public function make_rent($url){
 		
-
+$availabilty='yes';
 		$data = array(
+			
 				   //'name' => $this -> input->post('name'),
-				'renterName'=>$this-> input-> post('name'),
+				//'renterName'=>$this-> input-> post('name'),
+				'city'=>$this-> input-> post('city'),
+				'Availability'=> $availabilty,				
+				'ImagePath'=> $url,
+				'LodgeName'=>$this-> input->post('lname'),
 				'address1'=>$this-> input-> post('address1'),
 				'address2'=>$this-> input-> post('address2'),
-				'city'=>$this-> input-> post('city'),
-				'price'=>$this-> input-> post('price'),
-				'facility'=>$this-> input-> post('facility'),
-				'NumberOfRooms'=>$this-> input-> post('title')
+				'NumberOfRooms'=>$this-> input-> post('title'),
+				'price'=>$this-> input-> post('price')
+				
+				
 				);
-			$this-> db-> insert('rentouts' , $data);
+			$this-> db-> insert('reservation' , $data);
 	  }
     }
 ?>

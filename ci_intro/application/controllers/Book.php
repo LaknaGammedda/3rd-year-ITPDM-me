@@ -4,9 +4,11 @@ class Book extends CI_Controller
 {
 	function index($des)
 	{
+		$data['des']=$des;
 		if($this->session->userdata('username')!='')
 			{
-		       $this->load->view('book_place');
+
+		       $this->load->view('AB',$data);
 			}
 			else
 			{
@@ -18,8 +20,10 @@ class Book extends CI_Controller
 	{
 		
 			$this->load->model("Dat_Model");
-			$data['res']=$this->Dat_Model->viewAll($des);
 
+			$data['res']=$this->Dat_Model->viewAll($des);
+			// $id=$data['res']->Rid;
+			// $data['id']=$id;
 			
 
        
@@ -47,7 +51,8 @@ class Book extends CI_Controller
 	        $vote_results = $this->blogmodel->get_blog_rating_from_ip($blog_id);
 	        $data['blog_vote_ip_rate'] = $vote_results['vote_rate'];
 	        // $this->load->view('blog', $data);
-	        $this->load->view('rating/x/index');
+
+	        $this->load->view('rating/x/index',$data);
 
 
 		    

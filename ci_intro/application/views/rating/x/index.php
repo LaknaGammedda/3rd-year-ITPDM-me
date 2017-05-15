@@ -98,8 +98,15 @@
                     <script>
                         $(document).ready(function () {
                             $("#demo1 .stars").click(function () {
-                           
-                                $.post( "<?php echo base_url('index.php/BlogController/rate_s'); ?>",{rate:$(this).val()},function(d){
+                            <?php
+                            $id=0; 
+                            foreach ($res as $object1) {
+                                $a=$object1->ImagePath;
+                                $id=$object1->Rid;
+
+                            }
+                            $des=$id; ?>
+                                $.post( "<?php echo base_url('index.php/BlogController/rate_s/'.$des); ?>",{rate:$(this).val()},function(d){
                                     if(d>0)
                                     {
                                         alert('You already rated');

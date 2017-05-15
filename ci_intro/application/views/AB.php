@@ -69,6 +69,8 @@ input[type="Text"]
 style="margin-top:120px;border:1px solid #ccc;
        box-shadow:0 1px 25px;width:450px;margin-left:400px;background-color:#FFF"
        id="form1" name="form1" method="post" action="<?php echo base_url('index.php/Cbook/mybook');?>">
+        <?php 
+       // echo $des;?>
   <table width="281" border="0" align="center">
 
     <tr>
@@ -76,15 +78,8 @@ style="margin-top:120px;border:1px solid #ccc;
       <td width="105"><p style="font-family:'Times New Roman', Times, serif;font-size:14px;font-weight:bold;color:#009">Name of Lodge</p></td>
       <td width="170"><label for="LisName"></label>
      
-          <select style="width:303px;height:35px; -moz-border-radius:6px;
-	                      -webkit-border-radius:5px;margin-top:5px"
-                        name="LisName" id="LisName">
-          <option value="Kandalama">Kandalama</option>
-          <option value="Cinnamon Lake">Cinnamon Lake</option>
-          <option value="Villa Ocean">Villa Ocean</option>
-          <option value="Heritance Tea Factory">Heritance Tea Factory</option>
-          <option value="Golf Green Bungalow">Golf Green Bungalow</option>
-          </select></td>
+          
+      <input style="margin-top:8px" value="<?php echo $des;?>" type="text" name="name" id="txtNo" /></td>
     </tr>
 
     <tr>
@@ -100,28 +95,15 @@ style="margin-top:120px;border:1px solid #ccc;
       <input type="Date" name="txtOut" id="txtOut" /></td>
     </tr>
 
-    <tr>
+    <!-- <tr>
       <td><p style="font-family:'Times New Roman', Times, serif;font-size:14px;font-weight:bold;color:#009">City</p></td>
-      <td><label for="txtCity"></label>
-          <select style="width:303px;height:35px; -moz-border-radius:6px;
-	                     -webkit-border-radius:5px;margin-top:5px"
-                        name="txtCity" id="txtCity">
-          <option value="Colombo">Colombo</option>
-          <option value="Nuwara Eliya">Nuwara Eliya</option>
-          <option value="Kandy">Kandy</option>
-          <option value="Mirissa">Mirissa</option>
-          <option value="Galle">Galle</option>
-          <option value="Negombo">Negombo</option>
-          <option value="Sigiriya">Sigiriya</option>
-          <option value="Yala">Yala</option>
-          <option value="Unawatuna">Unawatuna</option>
-      </select></td>
-    </tr>
+      
+    </tr> -->
 
     <tr>
       <td><p style="font-family:'Times New Roman', Times, serif;font-size:14px;font-weight:bold;color:#009">Telephone</p></td>
       <td><label for="txtNo"></label>
-      <input style="margin-top:8px" type="text" name="txtNo" id="txtNo" /></td>
+      <input style="margin-top:8px" type="text" name="teleNo" id="txtNo" /></td>
     </tr>
 
     <tr>

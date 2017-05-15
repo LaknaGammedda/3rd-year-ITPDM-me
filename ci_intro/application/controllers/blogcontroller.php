@@ -24,10 +24,12 @@ class BlogController extends CI_Controller {
         $this->load->view('rating/x/index');
     }
 
-function rate_s() {
+function rate_s($des) {
     $a=$_POST['rate'];
+    // $des=$_POST['desti']
+    //echo $des;
     $ip=0;
-    $blogid=1;
+    $blogid=$des;
             $data = array(
                    //'name' => $this -> input->post('name'),
                      'blog_vote'=>$a,

@@ -205,8 +205,8 @@
   					</div>
   				</td>
   				<td><div id="desA"><h3><?php echo $name; ?></h3></div>
-  				<p><?php echo $ad1;?></p>
-  				<p><?php echo $ad2;?></p>
+  					<p><?php echo $ad1;?></p>
+  					<p><?php echo $ad2;?></p>
   				</td>
   				<td>
   					<div id= "priceA">

@@ -46,7 +46,7 @@
 
 <div  id="container">
 <?php echo form_open('RegisterC') ; ?>
-<h1>REGISTER</h1><hr/>
+<h1 style="color: #009">REGISTER</h1><hr/>
 <?php if (isset($message)) { ?>
 <CENTER><h3 style="color:green;">Data inserted successfully</h3></CENTER><br>
 

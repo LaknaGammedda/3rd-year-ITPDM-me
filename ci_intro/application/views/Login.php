@@ -114,8 +114,7 @@
   
 </style>
 <link rel="stylesheet" href="<?php echo base_url('assets/log.css');?>">	
-<script type="text/javascript"></script>
-   
+<script type="text/javascript"></script>   
 </head>
 
 <body>
@@ -169,35 +168,36 @@
         <div id="back_form" >
           <form method="post" action="<?php echo base_url('index.php/Mylogin/login_validation');?>">
                 <input style="margin-top:50px; height:25px;-moz-border-radius:5px;
-	-webkit-border-radius:5px ; 
-		 background-color:#b3c6ff;margin-left: 37px"
-		   type="text" name="username" placeholder="Username"/>
+	                         -webkit-border-radius:5px ; background-color:#b3c6ff;margin-left: 37px"
+		                      type="text" name="username" placeholder="Username"/>
                 <span class="text-danger"><?php echo form_error('username'); ?></span>
+
                
                 <input style="height:25px; -moz-border-radius:6px;
-	-webkit-border-radius:5px;margin-left: 37px; background-color:#b3c6ff" type="password" name="pass" placeholder="Password"/>
+	                          -webkit-border-radius:5px;margin-left: 37px; background-color:#b3c6ff"
+	                           type="password" name="pass" placeholder="Password"/>
               	<span class="text-danger"><?php echo form_error('pass'); ?></span>
 	            
 
                 <div class="row" >
                		<div class="col-sm-6">
-	                <input style="float:left;border-radius:3px;border:1px solid #319db8;background-color:#005c99;height: 25px; width:70px;font-size: 11px; " type="submit" name="valid" vlaue="Login" />
+	                <input style="float:left;border-radius:3px;border:1px solid #319db8;background-color:#005c99;height: 25px;
+	                              width:70px;font-size: 11px; "
+	                              type="submit" name="valid" vlaue="Login" />
 	                 <?php
 	                    echo '<label class="text-danger">'.$this->session->flashdata('error');
-	                 ?>
-
-	                
+	                 ?>	                
 	            	</div>
+
 	            	<div class="col-sm-6" >
-	            	<button style="float:right;  background-color: #005c99; width:70px;font-size: 11px;" onClick="window.location.href = '<?php echo base_url();?>index.php/RegisterC';return false;">Register</button>
+	            	<button style="float:right;  background-color: #005c99; width:70px;font-size: 11px;" 
+	            	               onClick="window.location.href = '<?php echo base_url();?>index.php/RegisterC';return false;">Register</button>
 	                
 	             
 	               
                		</div>
-                </div>
-               
-           </form>
-             
+                </div>               
+           </form>          
         
      
         </div>

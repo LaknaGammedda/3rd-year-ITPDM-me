@@ -80,6 +80,8 @@
   		$des= $object->Destination.'<br/>';
   		$a=$object->ImagePath;
   		$name=$object->LodgeName;
+  		$ad1=$object->Address1;
+  		$ad2=$object->Address2;
   		$id=$object->Rid;
   		$price=$object->Price;
   		?>
@@ -122,7 +124,11 @@
 
   				?>
   			</div></td>
-  			<td><div id="desA"><h3><?php echo $name; ?></h3></div></td>
+  			<td><div id="desA"><h3><?php echo $name; ?></h3></div>
+  				<p><?php echo $ad1;?></p>
+  				<p><?php echo $ad2;?></p>
+
+  			</td>
 
   			<td>
   				<div id= "priceA">
@@ -151,6 +157,8 @@
   			$des= $object1->Destination;
   			$a=$object1->ImagePath;
   			$id=$object1->Rid;
+  			$ad1=$object1->Address1;
+  			$ad2=$object1->Address2;
   			$name=$object1->LodgeName;
   			$price=$object1->Price;
   			?>
@@ -196,7 +204,10 @@
 
   					</div>
   				</td>
-  				<td><div id="desA"><h3><?php echo $name; ?></h3></div></td>
+  				<td><div id="desA"><h3><?php echo $name; ?></h3></div>
+  				<p><?php echo $ad1;?></p>
+  				<p><?php echo $ad2;?></p>
+  				</td>
   				<td>
   					<div id= "priceA">
   						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $price; ?>

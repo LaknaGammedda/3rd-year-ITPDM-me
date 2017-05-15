@@ -13,7 +13,7 @@
             #dv1, #dv0{
                 width: 408px;
                 /*border: 1px #ccc solid;*/
-                padding: 15px;
+                padding: 0px;
                
 
             }
@@ -26,7 +26,7 @@
 
             fieldset, label { margin: 0; padding: 0; }
             body{ margin: 20px; }
-            h1 { font-size: 1.5em; margin: 10px; }
+            h1 { font-size: 1.5em; }
 
             .rating { 
                 border: none;
@@ -35,7 +35,7 @@
 
             .rating > input { display: none; } 
             .rating > label:before { 
-                margin: 5px;
+                margin: 0px;
                 font-size: 1.25em;
                 font-family: FontAwesome;
                 display: inline-block;

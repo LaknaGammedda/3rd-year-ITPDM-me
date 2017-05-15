@@ -10,9 +10,47 @@
 
 
 	<title>Place a Booking</title>
+   <link rel="stylesheet" href="<?php echo base_url('assets/log.css');?>"> 
 </head>
 
-<body>
+<body style="font-family:'Times New Roman', Times, serif;
+   font-weight:900;
+   font-size:15px;
+   color:#006;
+      background-color:#e6e6ff">
+
+       <header id="header">
+      <div class="container">
+      <div id="logo"> <img src="<?php echo base_url('Image/PicsArt_03-21-08.30.27.jpg');?>" width="60" height="60"></div>
+        <h1>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BED AND BREAKFAST
+        </h1>
+        <nav id="nav">
+          <ul>
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+            <li>
+              <a href="#">Facilities</a>
+            </li>
+            <li>
+              <a href="#">Login</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <br>
+    <br>
+    <br>
+    <br>
+
 	<?php
 	function db_connect(){
 		$server_name = "localhost";
@@ -216,8 +254,8 @@
   						</p>
 
   						<p>
-  							<a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/index/'.$id) ?>">Book Now </a>	
-  							<a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/viewAll/'.$id) ?>">View all </a>
+  							<a style="background-color:#005c99;color:#FFF" class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/index/'.$id) ?>">Book Now </a>	
+  							<a style="background-color:#005c99;color:#FFF" class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/viewAll/'.$id) ?>">View all </a>
   						</p>
   					</div>
 

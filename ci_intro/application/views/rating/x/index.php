@@ -12,9 +12,9 @@
 
             #dv1, #dv0{
                 width: 408px;
-                border: 1px #ccc solid;
+                /*border: 1px #ccc solid;*/
                 padding: 15px;
-                margin: auto;
+               
 
             }
            
@@ -44,7 +44,7 @@
 
             .rating > .half:before { 
                 content: "\f089";
-                position: absolute;
+                /*/position: absolute;*/
             }
 
             .rating > label { 
@@ -91,10 +91,10 @@
                 
 
                 <div id="dv0"></div>
-                <div id="dv1">
+                <div id="dv1" style="folat: left;">
 
                     <!-- Demo 1 start -->
-                    <h1>Demo 1</h1>
+                    <h1>Add your rate</h1>
                     <script>
                         $(document).ready(function () {
                             $("#demo1 .stars").click(function () {

@@ -1,5 +1,8 @@
+ <br>
+ <br>
  <h2><?= $title ?></h2>
 <?php foreach ($posts as $post) : ?>
+
 	<h3><?php echo $post['title']; ?></h3>
 	<small class="post-date"> Posted on: <?php echo $post['time']; ?></small><br>
 	<?php echo $post['comment']; ?>

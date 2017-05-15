@@ -30,6 +30,8 @@ class Book extends CI_Controller
 
 			// echo $data['res'];
 			$this->load->view('viewall',$data);
+
+
 			$this->load->model("Post_model");
         	$data['posts'] = $this->Post_model->get_posts();
         	$this->load->view('templates/header');
@@ -44,7 +46,7 @@ class Book extends CI_Controller
 	        $data['blog_vote_overall_dec_rate'] = $vote_results['vote_dec_rate'];
 	        $vote_results = $this->blogmodel->get_blog_rating_from_ip($blog_id);
 	        $data['blog_vote_ip_rate'] = $vote_results['vote_rate'];
-	        $this->load->view('blog', $data);
+	        // $this->load->view('blog', $data);
 	        $this->load->view('rating/x/index');
 
 

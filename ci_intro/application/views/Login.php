@@ -23,22 +23,25 @@
 	  {
 		  font-family:Verdana;
 		  font-size:15px;
-		  height: 100px;
+		  background-color:#e6e6ff;
+
+		  
 	  }
 	     @media(min-width:340px)
 	  {
 		  .container{max-width:340px};
+
 	  }
 
       div#back_glob
 	  {
 		  background-color:white;
-		  border:1px solid #25b2d5;
+		  border:1px solid #FFF;
 		  vertical-align: middle;
           width: 300px;
           height: 250px;
 		  margin-left: 360px;
-		  box-shadow:1px 0px 15px #25b2d5;
+		  box-shadow:1px 0px 15px #00134d;
 	  }
 	  input
 	  {
@@ -48,9 +51,9 @@
 	  }
 	  div#back_header
 	  {
-		background-color:#25b2d5;
+		background-color:#00134d;
 		text-align:center;
-
+        border-radius:3px;
 		font-size:22px;
 		font-weight:bold;
 		color:white;
@@ -60,10 +63,10 @@
 	  {  
 	      
 		  padding:20px;
+
 		  border-radius:3px;
 		  font-size:14px;
-		  border:1px solid #ddd;
-		  
+
 	  }
 	  input[type=submit]
 	  {
@@ -74,9 +77,10 @@
 		  background-color:25b2d5;
 		  padding:5px 10px 5px 10 px;
 		  border-radius:3px;
-		  border:1px solid #319db8;
+		 
 		  color:white;
 		  font-weight:bold;
+
 		 
 	  }
 	  button
@@ -91,6 +95,8 @@
 		  border:1px solid #319db8;
 		  color:white;
 		  font-weight:bold;
+		  height: 25px;
+
 		 
 	  }
 	
@@ -163,17 +169,19 @@
         <div id="back_form" >
           <form method="post" action="<?php echo base_url('index.php/Mylogin/login_validation');?>">
                 <input style="margin-top:50px; height:25px;-moz-border-radius:5px;
-	-webkit-border-radius:5px" type="text" name="username" placeholder="Username"/>
+	-webkit-border-radius:5px ; 
+		 background-color:#b3c6ff;margin-left: 37px"
+		   type="text" name="username" placeholder="Username"/>
                 <span class="text-danger"><?php echo form_error('username'); ?></span>
                
                 <input style="height:25px; -moz-border-radius:6px;
-	-webkit-border-radius:5px" type="password" name="pass" placeholder="Password"/>
+	-webkit-border-radius:5px;margin-left: 37px; background-color:#b3c6ff" type="password" name="pass" placeholder="Password"/>
               	<span class="text-danger"><?php echo form_error('pass'); ?></span>
 	            
 
                 <div class="row" >
                		<div class="col-sm-6">
-	                <input style="float:left" type="submit" name="valid" vlaue="Login" />
+	                <input style="float:left;border-radius:3px;border:1px solid #319db8;background-color:#005c99;height: 25px; width:70px;font-size: 11px; " type="submit" name="valid" vlaue="Login" />
 	                 <?php
 	                    echo '<label class="text-danger">'.$this->session->flashdata('error');
 	                 ?>
@@ -181,7 +189,7 @@
 	                
 	            	</div>
 	            	<div class="col-sm-6" >
-	            	<button style="float:right" onClick="window.location.href = '<?php echo base_url();?>index.php/RegisterC';return false;">Register</button>
+	            	<button style="float:right;  background-color: #005c99; width:70px;font-size: 11px;" onClick="window.location.href = '<?php echo base_url();?>index.php/RegisterC';return false;">Register</button>
 	                
 	             
 	               
@@ -213,7 +221,7 @@
     <br>
      <br>
     <br>
-   <div class="container" id="footer" style="max-width:100%">
+   <div class="container" id="footer" style="max-width:100%;height:40px;margin-bottom:none">
       <p>CopyRight2017 Bed and Breakfast private limited.</p>
      </div>
    

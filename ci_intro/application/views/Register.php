@@ -2,20 +2,54 @@
 <head>
 <title>Insert Data Into Database Using CodeIgniter Form</title>
 <link href='http://fonts.googleapis.com/css?family=Marcellus' rel='stylesheet' type='text/css'/>
- <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+<link rel="stylesheet" href="<?php echo base_url('assets/log.css');?>">	
+
 <link rel="stylesheet" href="<?php echo base_url('assets/style.css');?>">
 
 </head>
-<body>
+<body style="  background-color:#e6e6ff">
 
-<div id="container">
-<?php echo form_open('RegisterC'); ?>
-<h1>Insert Data Into Database Using CodeIgniter +style</h1><hr/>
+	<header id="header">
+      <div class="container">
+      <div id="logo"> <img src="<?php echo base_url('Image/PicsArt_03-21-08.30.27.jpg');?>" width="60" height="60"></div>
+        <h1 style="float:left">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BED AND BREAKFAST
+        </h1>
+        <nav id="nav">
+          <ul>
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+            <li>
+              <a href="#">Facilities</a>
+            </li>
+            <li>
+              <a href="#">Login</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <br>
+    <br>
+    <br>
+    <br>
+
+	
+
+<div  id="container">
+<?php echo form_open('RegisterC') ; ?>
+<h1>REGISTER</h1><hr/>
 <?php if (isset($message)) { ?>
 <CENTER><h3 style="color:green;">Data inserted successfully</h3></CENTER><br>
+
 <?php } ?>
 <?php echo form_label('First Name :'); ?> <?php echo form_error('fname'); ?><br />
 <?php echo form_input(array('id' => 'fname', 'name' => 'fname')); ?><br />
@@ -44,7 +78,8 @@
 <?php echo form_label('Password:'); ?> <?php echo form_error('pass'); ?><br />
 <?php echo form_input(array('id' => 'pass', 'name' => 'pass')); ?><br />
 
-<select name="selection1" id="selection1">
+<select style="-moz-border-radius:5px;
+	-webkit-border-radius:5px ; "name="selection1" id="selection1">
     <option value="Renter">Renter</option>
     <option value="Tourist">Tourist</option>
   </select>
@@ -58,5 +93,9 @@
 
 </div>
 </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+ <div class="container" id="footer" style="max-width:100%;height:40px;margin-bottom:none">
+      <p style="padding-top:10px">CopyRight2017 Bed and Breakfast private limited.</p>
+     </div>
 </body>
 </html>

@@ -29,6 +29,7 @@ $this->form_validation->set_rules('city', 'City', 'required|min_length[5]|max_le
 
 $this->form_validation->set_rules('Uname', 'UserName', 'required');
 $this->form_validation->set_rules('pass', 'Password', 'required');
+$this->form_validation->set_rules('conf', 'ConfPass', 'required|matches[pass]');
 $this->form_validation->set_rules('selection1','Menu','required');
 
 

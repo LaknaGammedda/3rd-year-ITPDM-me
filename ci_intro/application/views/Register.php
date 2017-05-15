@@ -76,7 +76,10 @@
 <?php echo form_input(array('id' => 'Uname', 'name' => 'Uname')); ?><br />
 
 <?php echo form_label('Password:'); ?> <?php echo form_error('pass'); ?><br />
-<?php echo form_input(array('id' => 'pass', 'name' => 'pass')); ?><br />
+<?php echo form_input(array( 'id' => 'pass', 'name' => 'pass','type'=>'password')); ?><br />
+
+<?php echo form_label('Confirm Password:'); ?> <?php echo form_error('conf'); ?><br />
+<?php echo form_input(array( 'id' => 'conf', 'name' => 'conf','type'=>'password' )); ?><br />
 
 <select style="-moz-border-radius:5px;
 	-webkit-border-radius:5px ; "name="selection1" id="selection1">
@@ -94,8 +97,8 @@
 </div>
 </div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
- <div class="container" id="footer" style="max-width:100%;height:40px;margin-bottom:none">
-      <p style="padding-top:10px">CopyRight2017 Bed and Breakfast private limited.</p>
+ <div class="container" id="footer" style="max-width:100%;height:40px;margin-bottom:none;float:left">
+      <p style="padding-top:5px">CopyRight2017 Bed and Breakfast private limited.</p>
      </div>
 </body>
 </html>

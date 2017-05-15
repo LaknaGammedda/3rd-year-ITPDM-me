@@ -31,9 +31,18 @@ if($this->form_validation->run())
    	 $session_data= $arrayName = array('username' =>$username);
 
    	 $this->session->set_userdata($session_data);
-     echo "session created";
+     $role=$this->Login_model->user_role($username,$password);
+     if ($role=="admin") {
+          $data['title'] = 'Make Rent Outs';
+          $this->load->view('RegisterRent',$data);
+         
+       # code...
+     }else{
+      $this->load->view('Home');
+     }
+     // echo "session created";
      
-   	 redirect(base_url('index.php/Mylogin/enter'));
+   	 // redirect(base_url('index.php/Mylogin/enter'));
    }
    else
    {

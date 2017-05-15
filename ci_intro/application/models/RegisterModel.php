@@ -25,7 +25,8 @@ $availabilty='yes';
 				'address1'=>$this-> input-> post('address1'),
 				'address2'=>$this-> input-> post('address2'),
 				'NumRooms'=>$this-> input-> post('select'),
-				'price'=>$this-> input-> post('price')
+				'price'=>$this-> input-> post('price'),
+				'description'=>$availabilty
 				
 				
 				);

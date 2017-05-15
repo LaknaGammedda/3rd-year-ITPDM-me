@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 15, 2017 at 02:33 PM
+-- Generation Time: May 15, 2017 at 04:28 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -44,7 +44,11 @@ INSERT INTO `blog_vote` (`vote_id`, `blog_vote`, `blog_id`, `ip_address`) VALUES
 (4, 3, 2, NULL),
 (5, 4, 2, NULL),
 (6, 2, 1, '0'),
-(7, 3, 1, '0');
+(7, 3, 1, '0'),
+(8, 4, 1, '0'),
+(9, 4, 2, '0'),
+(10, 4, 1, '0'),
+(11, 5, 5, '0');
 
 -- --------------------------------------------------------
 
@@ -127,13 +131,8 @@ CREATE TABLE `register` (
 --
 
 INSERT INTO `register` (`Rid`, `firstName`, `lastName`, `Email`, `Telephone`, `Add1`, `Add2`, `City`, `Username`, `Password`, `role`) VALUES
-(1, 'lakna', 'harindie', 'chanddabare@gmail.com', 718163361, '139B1C', 'jagathrd', 'mahargama', 'my1234', 'abc12345', ''),
-(2, 'lakna', 'harindie', 'chanddabare@gmail.com', 718163361, '139B1C', 'jagathrd', 'mahargama', 'my1234', 'abc12345', ''),
-(3, 'lakna', 'harindie', 'chanddabare@gmail.com', 718163361, '139B1C', 'jagathrd', 'mahargama', 'my1234', 'abc12345', ''),
-(4, 'lakna', 'harindie', 'chanddabare@gmail.com', 718163361, '139B1C', 'jagathrd', 'mahargama', 'my1234', 'abc12345', ''),
-(5, 'lakna', 'harindie', 'chanddabare@gmail.com', 718163361, '139B1C', 'jagathrd', 'mahargama', 'my1234', 'abc12345', ''),
-(6, 'lakna', 'harindie', 'chanddabare@gmail.com', 718163361, '139B1C', 'jagathrd', 'mahargama', 'my1234', 'abc12345', ''),
-(7, 'missa', 'mewan', 'chanddabare@gmail.com', 1234567890, '190ABC', 'jagathrd', 'mahargama', '12345ac', 'ABCD123', 'Tourist');
+(1, 'lakna', 'harindie', 'chanddabare@gmail.com', 718163361, '139B1C', 'jagathrd', 'mahargama', 'my1234', 'abc12345', 'admin'),
+(7, 'missa', 'mewan', 'chanddabare@gmail.com', 1234567890, '190ABC', 'jagathrd', 'mahargama', 'my', 'abc12345', 'Tourist');
 
 -- --------------------------------------------------------
 
@@ -202,8 +201,7 @@ INSERT INTO `res` (`Did`, `CheckIn`, `CheckOut`, `Rid`, `TeleNo`) VALUES
 (1, '2017-05-01', '2017-05-10', 1, 718164462),
 (2, '2017-05-01', '2017-05-04', 2, 777366982),
 (3, '2017-05-03', '2017-05-05', 3, 711572422),
-(4, '2017-05-11', '2017-05-12', 4, 724566710),
-(5, '2017-05-12', '2017-05-16', 5, 782456172);
+(4, '2017-05-11', '2017-05-12', 4, 724566710);
 
 -- --------------------------------------------------------
 
@@ -233,7 +231,9 @@ INSERT INTO `reservation` (`Rid`, `Destination`, `Availability`, `ImagePath`, `L
 (2, 'Colombo', 'yes', 'Image/img2.jpg', 'Cinnamon Lake', 'No:130A', 'Kollupitiya', 2, 10500, 'Born in Chavaniac, in the province of Auvergne in south central France, Lafayette came from a wealthy landowning family. He followed its martial tradition, and was commissioned an officer at age 13. He became convinced that the American cause in its revolutionary war was noble, and traveled to the New World seeking glory in it. There, he was made a major general; however, the 19-year-old was initially not given troops to command. Wounded during the Battle of Brandywine, he still managed to organize an orderly retreat. He served with distinction in the Battle of Rhode Island. In the middle of the war, he returned home to lobby for an increase in French support. He again sailed to America in 1780, and was given senior positions in the Continental Army. In 1781, troops in Virginia under his command blocked forces led by Cornwallis until other American and French forces could position themselves for the decisive Siege of Yorktown.'),
 (3, 'Colombo', 'yes', 'Image/img6.jpg', 'Kandalama', 'No:132', 'Rajaweediya', 2, 7000, 'Born in Chavaniac, in the province of Auvergne in south central France, Lafayette came from a wealthy landowning family. He followed its martial tradition, and was commissioned an officer at age 13. He became convinced that the American cause in its revolutionary war was noble, and traveled to the New World seeking glory in it. There, he was made a major general; however, the 19-year-old was initially not given troops to command. Wounded during the Battle of Brandywine, he still managed to organize an orderly retreat. He served with distinction in the Battle of Rhode Island. In the middle of the war, he returned home to lobby for an increase in French support. He again sailed to America in 1780, and was given senior positions in the Continental Army. In 1781, troops in Virginia under his command blocked forces led by Cornwallis until other American and French forces could position themselves for the decisive Siege of Yorktown.'),
 (4, 'Colombo', 'yes', 'Image/img4.jpg', 'Villa Ocean', 'No:139B', 'Temple Rd.', 2, 6980, 'Born in Chavaniac, in the province of Auvergne in south central France, Lafayette came from a wealthy landowning family. He followed its martial tradition, and was commissioned an officer at age 13. He became convinced that the American cause in its revolutionary war was noble, and traveled to the New World seeking glory in it. There, he was made a major general; however, the 19-year-old was initially not given troops to command. Wounded during the Battle of Brandywine, he still managed to organize an orderly retreat. He served with distinction in the Battle of Rhode Island. In the middle of the war, he returned home to lobby for an increase in French support. He again sailed to America in 1780, and was given senior positions in the Continental Army. In 1781, troops in Virginia under his command blocked forces led by Cornwallis until other American and French forces could position themselves for the decisive Siege of Yorktown.'),
-(5, 'Nuwara Eliya', 'yes', 'Image/img8.jpg', 'Golf Green Bungalow', 'No:123C', 'Grand Hotel Rd.', 2, 8024, 'Born in Chavaniac, in the province of Auvergne in south central France, Lafayette came from a wealthy landowning family. He followed its martial tradition, and was commissioned an officer at age 13. He became convinced that the American cause in its revolutionary war was noble, and traveled to the New World seeking glory in it. There, he was made a major general; however, the 19-year-old was initially not given troops to command. Wounded during the Battle of Brandywine, he still managed to organize an orderly retreat. He served with distinction in the Battle of Rhode Island. In the middle of the war, he returned home to lobby for an increase in French support. He again sailed to America in 1780, and was given senior positions in the Continental Army. In 1781, troops in Virginia under his command blocked forces led by Cornwallis until other American and French forces could position themselves for the decisive Siege of Yorktown.');
+(5, 'Nuwara Eliya', 'yes', 'Image/img8.jpg', 'Golf Green Bungalow', 'No:123C', 'Grand Hotel Rd.', 2, 8024, 'Born in Chavaniac, in the province of Auvergne in south central France, Lafayette came from a wealthy landowning family. He followed its martial tradition, and was commissioned an officer at age 13. He became convinced that the American cause in its revolutionary war was noble, and traveled to the New World seeking glory in it. There, he was made a major general; however, the 19-year-old was initially not given troops to command. Wounded during the Battle of Brandywine, he still managed to organize an orderly retreat. He served with distinction in the Battle of Rhode Island. In the middle of the war, he returned home to lobby for an increase in French support. He again sailed to America in 1780, and was given senior positions in the Continental Army. In 1781, troops in Virginia under his command blocked forces led by Cornwallis until other American and French forces could position themselves for the decisive Siege of Yorktown.'),
+(6, 'dfsd', 'yes', './image/49895919b8ed493eb.jpg', 'sdfasd', 'safsd', 'das', 2, 456, ''),
+(7, 'sds', 'yes', './image/37125919ba41725fd.jpg', 'sdfs', 'dsafsa', 'zdcs', 5, 546, 'yes');
 
 -- --------------------------------------------------------
 
@@ -323,7 +323,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `blog_vote`
 --
 ALTER TABLE `blog_vote`
-  MODIFY `vote_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `vote_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `login`
 --
@@ -348,12 +348,12 @@ ALTER TABLE `rentouts`
 -- AUTO_INCREMENT for table `res`
 --
 ALTER TABLE `res`
-  MODIFY `Did` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Did` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `Rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `users`
 --

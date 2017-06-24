@@ -7,16 +7,6 @@ class Dat_Model extends CI_Model
 
       $No="No";
 
-       // $this->db->select('*');
-       // $this->db->from('res');
-       // $this->db->where('res.CheckOut <',$startDate);
-       // $this->db->join('reservation','res.Rid=reservation.Rid');       
-       // $query=$this->db->get();
-       // $query=$this->db->query("SELECT * FROM reservation INNER JOIN res ON reservation.Rid=res.Rid");
-        // WHERE Availability='".$yes."' AND Destination='".$valuee."' ");
-       // $query=$this->db->query("SELECT * FROM reservation INNER JOIN  res ON reservation.Rid=res.Rid  WHERE res.CheckOut < '".$startDate."'  ");
-
-
        $query=$this->db->query("SELECT * FROM reservation as r INNER JOIN res as re on r.Rid= re.Rid WHERE r.Availability= ? and r.Destination= ?  and re.CheckOut<? ",array($No,$des,$startDate));
 
        if($query->num_rows()>0)

@@ -25,7 +25,7 @@ class RegisterCntrol extends CI_Controller{
 			$res=$this->RegisterModel->make_rent();
 			
 			if ($res){
-				redirect(base_url('/index.php/RegisterCntrol/create'));
+				$this->load->view('uploadimage.php');
 
 			}
 

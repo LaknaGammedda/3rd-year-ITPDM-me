@@ -29,7 +29,7 @@
 				'address2'=>$this->input->post('address2'),
 				'NumRooms'=>$this->input->post('select'),
 				'price'=>$this->input->post('price'),
-				'description'=>$availabilty
+				'description'=>$this->input->post('des')
 				
 				
 				);

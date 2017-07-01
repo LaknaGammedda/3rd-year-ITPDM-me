@@ -22,22 +22,24 @@ class RegisterCntrol extends CI_Controller{
 			$this->load->view('RegisterRent',$data);
 		}
 		else{
-			$type=explode('.', $_FILES['pic']['name']);
-			$type=$type[count($type)-1];
-			$url= "./image/".uniqid(rand()).'.'.$type;
-			if(in_array($type, array("jpg","jpeg","gif","png")))
+			$res=$this->RegisterModel->make_rent();
+			
+			if ($res){
+				redirect(base_url('/index.php/RegisterCntrol/create'));
 
-				if (is_uploaded_file($_FILES['pic']['tmp_name'])) 
-					if (move_uploaded_file($_FILES['pic']['tmp_name'], $url)) 
-
-						$this->RegisterModel->make_rent($url);
-					echo "Successfully added your lodge" ;
-	  	//$this-> load->view('post/lodgeAddSucess');
-				}
 			}
 
 		}
+	}
 
-		?>
+
+
+
+
+
+
+}
+
+?>
 
 

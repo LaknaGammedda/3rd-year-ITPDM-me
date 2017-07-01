@@ -7,7 +7,7 @@
 
 <link rel="stylesheet" href="<?php echo base_url('assets/log.css');?>"> 
 <link rel="stylesheet" href="<?php echo base_url('assets/reg.css');?>"> 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 </head>
 
@@ -101,10 +101,47 @@
   <button style="width:300px;background-color: #005c99" type="submit" class="btn btn-default" name="btnAdd">Add</button> 
   
 </form>
+<form id="uploadimage" enctype='multipart/form-data'>
+              
+              <div class="form-group">
+                <input type="file" name="file" id="file">
+              </div>
+              <div class="form-group">
+                <input type="button" name="" class="btn btn-primary" onclick="uploadfile()" value="upload">
+              </div>
+</form>
+
+
+
 </div>
 <br><br><br><br><br><br>
   <div class="container" id="footer" style="max-width:100%;height:43px;margin-bottom:none;">
       <p>CopyRight2017 Bed and Breakfast private limited.</p>
      </div>
 </body>
+<script>
+function uploadfile(){
+
+      // Function to preview image after validation
+
+      $.ajax({
+  url: "<?php echo base_url('index.php/fileupload/uploadPicture'); ?>", // Url to which the request is send
+  type: "POST",             // Type of request to be send, called as method
+  data: new FormData(document.getElementById("uploadimage")), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+  contentType: false,       // The content type used when sending data to the server.
+  cache: false,             // To unable request pages to be cached
+  processData:false,        // To send DOMDocument or non processed data file it is set to false
+  success: function(data)   // A function to be called if request succeeds
+  {
+    alert(data);
+    
+  },error:function(xhr, textStatus, errorThrown){
+    alert("error");
+
+  }
+});
+    }
+
+
+</script>
 </html>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 15, 2017 at 04:28 PM
+-- Generation Time: Jul 01, 2017 at 08:00 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -48,7 +48,11 @@ INSERT INTO `blog_vote` (`vote_id`, `blog_vote`, `blog_id`, `ip_address`) VALUES
 (8, 4, 1, '0'),
 (9, 4, 2, '0'),
 (10, 4, 1, '0'),
-(11, 5, 5, '0');
+(11, 5, 5, '0'),
+(12, 5, 3, '0'),
+(13, 3, 4, '0'),
+(14, 5, 4, '0'),
+(15, 3, 8, '0');
 
 -- --------------------------------------------------------
 
@@ -152,33 +156,6 @@ CREATE TABLE `rentouts` (
   `path` varchar(125) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `rentouts`
---
-
-INSERT INTO `rentouts` (`accomodationId`, `renterName`, `address1`, `address2`, `city`, `price`, `facility`, `NumberOfRooms`, `path`) VALUES
-(1, 'sfdf', 'rgeg', 'bfbfdv', 'ererw', 654545, 'hjkdgfzhshAJ', 3, ''),
-(2, 'sfdf', 'rgeg', 'bfbfdv', 'ererw', 654545, 'hjkdgfzhshAJ', 3, ''),
-(3, 'sadnas', 'cbbds', 'rhejrh', 'fvfjhj', 454210, 'ahdjedhjsndsm', 2, ''),
-(4, 'vnbvn', 'ehwj', 'dsnjh', 'dhfjvhfdj', 548655, 'shdjhdskcn', 4, ''),
-(5, 'zcghzc', 'sdhfjs', 'wdgjhd', 'zxcjx', 435465, 'shdgjasdhjsc', 3, ''),
-(6, 'fhgfhgfghf', 'bhghx', 'dc', 'sc', 25, 'cs', 3, ''),
-(7, 'thiwanka', 'sdhfjssfg', 'sndbfndsf', 'sfs', 5423.2, 'sbfdbshf', 3, ''),
-(8, 'cvcv', 'dhjdsh', 'jdhajsdhfd', 'dhjvd', 23455, 'dchgdshcgdh', 2, ''),
-(9, 'thiwanka', 'dhjdsh', 'gdfhgef', 'dhfjvhfdj', 10255, 'bbvnbvxcnx', 2, ''),
-(10, 'nbn', 'nvbb', 'bm,', 'vnv', 2345, 'cdg', 2, './images/179215911fd6407b99.'),
-(11, 's', 'c', 'd', 'v', 5423.2, 'dv', 2, './images/196225912007f8c44b.'),
-(12, 's', 'c', 'd', 'v', 5423.2, 'dv', 2, './images/26343591202427d880.'),
-(13, 's', 'c', 'd', 'v', 5423.2, 'dv', 2, './images/252365912096b034c5.'),
-(14, 's', 'c', 'd', 'v', 5423.2, 'dv', 2, './images/1670159120977ed8df.'),
-(15, 's', 'c', 'd', 'v', 5423.2, 'dv', 2, './images/337859120a711b28b.'),
-(16, 's', 'c', 'd', 'v', 5423.2, 'dv', 2, './images/269159120b2c955bd.'),
-(17, 's', 'c', 'd', 'v', 5423.2, 'dv', 2, './images/512059120befe8029.'),
-(18, 'vilasha', 'sdhfjs', 'cdscd', 'assssa', 6454, 'cascbc', 2, './images/270705912d1e5a7ff0.jpg'),
-(19, 'thiwanka', 'korasawalduwa road', 'wanawasala', 'kelaniya', 50000, 'two rooms attached bathrooms aircondition', 2, './images/17069591300a4cf51b.jpg'),
-(20, 'dhsfhj', 'sdfhdf', 'sdhfd', 'ehfhe', 52, 'gsfhsgf', 2, './images/387659135ffedb755.jpg'),
-(21, 'jdsfhjs', 'sdfhdf', 'dsfds', 'dsfds', 6533, 'sdfhjd', 1, './images/2142459156a65c7c92.jpg');
-
 -- --------------------------------------------------------
 
 --
@@ -190,18 +167,17 @@ CREATE TABLE `res` (
   `CheckIn` date NOT NULL,
   `CheckOut` date NOT NULL,
   `Rid` int(11) NOT NULL,
-  `TeleNo` int(11) NOT NULL
+  `TeleNo` int(11) NOT NULL,
+  `username` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `res`
 --
 
-INSERT INTO `res` (`Did`, `CheckIn`, `CheckOut`, `Rid`, `TeleNo`) VALUES
-(1, '2017-05-01', '2017-05-10', 1, 718164462),
-(2, '2017-05-01', '2017-05-04', 2, 777366982),
-(3, '2017-05-03', '2017-05-05', 3, 711572422),
-(4, '2017-05-11', '2017-05-12', 4, 724566710);
+INSERT INTO `res` (`Did`, `CheckIn`, `CheckOut`, `Rid`, `TeleNo`, `username`) VALUES
+(2, '2017-05-01', '2017-05-04', 2, 777366982, 'my'),
+(7, '2017-06-30', '2017-07-27', 1, 0, '0');
 
 -- --------------------------------------------------------
 
@@ -219,21 +195,22 @@ CREATE TABLE `reservation` (
   `Address2` varchar(60) NOT NULL,
   `NumRooms` int(11) NOT NULL,
   `Price` int(11) NOT NULL,
-  `description` text NOT NULL
+  `description` text NOT NULL,
+  `status` varchar(100) NOT NULL,
+  `username` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `reservation`
 --
 
-INSERT INTO `reservation` (`Rid`, `Destination`, `Availability`, `ImagePath`, `LodgeName`, `Address1`, `Address2`, `NumRooms`, `Price`, `description`) VALUES
-(1, 'Nuwara Eliya', 'No', 'Image/img3.jpg', 'Heritance Tea Factory', 'No:340A', 'welimada', 1, 5020, 'Born in Chavaniac, in the province of Auvergne in south central France, Lafayette came from a wealthy landowning family. He followed its martial tradition, and was commissioned an officer at age 13. He became convinced that the American cause in its revolutionary war was noble, and traveled to the New World seeking glory in it. There, he was made a major general; however, the 19-year-old was initially not given troops to command. Wounded during the Battle of Brandywine, he still managed to organize an orderly retreat. He served with distinction in the Battle of Rhode Island. In the middle of the war, he returned home to lobby for an increase in French support. He again sailed to America in 1780, and was given senior positions in the Continental Army. In 1781, troops in Virginia under his command blocked forces led by Cornwallis until other American and French forces could position themselves for the decisive Siege of Yorktown.'),
-(2, 'Colombo', 'yes', 'Image/img2.jpg', 'Cinnamon Lake', 'No:130A', 'Kollupitiya', 2, 10500, 'Born in Chavaniac, in the province of Auvergne in south central France, Lafayette came from a wealthy landowning family. He followed its martial tradition, and was commissioned an officer at age 13. He became convinced that the American cause in its revolutionary war was noble, and traveled to the New World seeking glory in it. There, he was made a major general; however, the 19-year-old was initially not given troops to command. Wounded during the Battle of Brandywine, he still managed to organize an orderly retreat. He served with distinction in the Battle of Rhode Island. In the middle of the war, he returned home to lobby for an increase in French support. He again sailed to America in 1780, and was given senior positions in the Continental Army. In 1781, troops in Virginia under his command blocked forces led by Cornwallis until other American and French forces could position themselves for the decisive Siege of Yorktown.'),
-(3, 'Colombo', 'yes', 'Image/img6.jpg', 'Kandalama', 'No:132', 'Rajaweediya', 2, 7000, 'Born in Chavaniac, in the province of Auvergne in south central France, Lafayette came from a wealthy landowning family. He followed its martial tradition, and was commissioned an officer at age 13. He became convinced that the American cause in its revolutionary war was noble, and traveled to the New World seeking glory in it. There, he was made a major general; however, the 19-year-old was initially not given troops to command. Wounded during the Battle of Brandywine, he still managed to organize an orderly retreat. He served with distinction in the Battle of Rhode Island. In the middle of the war, he returned home to lobby for an increase in French support. He again sailed to America in 1780, and was given senior positions in the Continental Army. In 1781, troops in Virginia under his command blocked forces led by Cornwallis until other American and French forces could position themselves for the decisive Siege of Yorktown.'),
-(4, 'Colombo', 'yes', 'Image/img4.jpg', 'Villa Ocean', 'No:139B', 'Temple Rd.', 2, 6980, 'Born in Chavaniac, in the province of Auvergne in south central France, Lafayette came from a wealthy landowning family. He followed its martial tradition, and was commissioned an officer at age 13. He became convinced that the American cause in its revolutionary war was noble, and traveled to the New World seeking glory in it. There, he was made a major general; however, the 19-year-old was initially not given troops to command. Wounded during the Battle of Brandywine, he still managed to organize an orderly retreat. He served with distinction in the Battle of Rhode Island. In the middle of the war, he returned home to lobby for an increase in French support. He again sailed to America in 1780, and was given senior positions in the Continental Army. In 1781, troops in Virginia under his command blocked forces led by Cornwallis until other American and French forces could position themselves for the decisive Siege of Yorktown.'),
-(5, 'Nuwara Eliya', 'yes', 'Image/img8.jpg', 'Golf Green Bungalow', 'No:123C', 'Grand Hotel Rd.', 2, 8024, 'Born in Chavaniac, in the province of Auvergne in south central France, Lafayette came from a wealthy landowning family. He followed its martial tradition, and was commissioned an officer at age 13. He became convinced that the American cause in its revolutionary war was noble, and traveled to the New World seeking glory in it. There, he was made a major general; however, the 19-year-old was initially not given troops to command. Wounded during the Battle of Brandywine, he still managed to organize an orderly retreat. He served with distinction in the Battle of Rhode Island. In the middle of the war, he returned home to lobby for an increase in French support. He again sailed to America in 1780, and was given senior positions in the Continental Army. In 1781, troops in Virginia under his command blocked forces led by Cornwallis until other American and French forces could position themselves for the decisive Siege of Yorktown.'),
-(6, 'dfsd', 'yes', './image/49895919b8ed493eb.jpg', 'sdfasd', 'safsd', 'das', 2, 456, ''),
-(7, 'sds', 'yes', './image/37125919ba41725fd.jpg', 'sdfs', 'dsafsa', 'zdcs', 5, 546, 'yes');
+INSERT INTO `reservation` (`Rid`, `Destination`, `Availability`, `ImagePath`, `LodgeName`, `Address1`, `Address2`, `NumRooms`, `Price`, `description`, `status`, `username`) VALUES
+(1, 'Nuwara Eliya', 'yes', 'Image/img3.jpg', 'Heritance Tea Factory', 'No:340A', 'welimada', 1, 5020, 'Born in Chavaniac, in the province of Auvergne in south central France, Lafayette came from a wealthy landowning family. He followed its martial tradition, and was commissioned an officer at age 13. He became convinced that the American cause in its revolutionary war was noble, and traveled to the New World seeking glory in it. There, he was made a major general; however, the 19-year-old was initially not given troops to command. Wounded during the Battle of Brandywine, he still managed to organize an orderly retreat. He served with distinction in the Battle of Rhode Island. In the middle of the war, he returned home to lobby for an increase in French support. He again sailed to America in 1780, and was given senior positions in the Continental Army. In 1781, troops in Virginia under his command blocked forces led by Cornwallis until other American and French forces could position themselves for the decisive Siege of Yorktown.', '0', ''),
+(2, 'Colombo', 'yes', 'Image/img2.jpg', 'Cinnamon Lake', 'No:130A', 'Kollupitiya', 2, 10500, 'Born in Chavaniac, in the province of Auvergne in south central France, Lafayette came from a wealthy landowning family. He followed its martial tradition, and was commissioned an officer at age 13. He became convinced that the American cause in its revolutionary war was noble, and traveled to the New World seeking glory in it. There, he was made a major general; however, the 19-year-old was initially not given troops to command. Wounded during the Battle of Brandywine, he still managed to organize an orderly retreat. He served with distinction in the Battle of Rhode Island. In the middle of the war, he returned home to lobby for an increase in French support. He again sailed to America in 1780, and was given senior positions in the Continental Army. In 1781, troops in Virginia under his command blocked forces led by Cornwallis until other American and French forces could position themselves for the decisive Siege of Yorktown.', '0', ''),
+(3, 'Colombo', 'No', 'Image/img6.jpg', 'Kandalama', 'No:132', 'Rajaweediya', 2, 7000, 'Born in Chavaniac, in the province of Auvergne in south central France, Lafayette came from a wealthy landowning family. He followed its martial tradition, and was commissioned an officer at age 13. He became convinced that the American cause in its revolutionary war was noble, and traveled to the New World seeking glory in it. There, he was made a major general; however, the 19-year-old was initially not given troops to command. Wounded during the Battle of Brandywine, he still managed to organize an orderly retreat. He served with distinction in the Battle of Rhode Island. In the middle of the war, he returned home to lobby for an increase in French support. He again sailed to America in 1780, and was given senior positions in the Continental Army. In 1781, troops in Virginia under his command blocked forces led by Cornwallis until other American and French forces could position themselves for the decisive Siege of Yorktown.', '0', ''),
+(4, 'Colombo', 'yes', 'Image/img4.jpg', 'Villa Ocean', 'No:139B', 'Temple Rd.', 2, 6980, 'Born in Chavaniac, in the province of Auvergne in south central France, Lafayette came from a wealthy landowning family. He followed its martial tradition, and was commissioned an officer at age 13. He became convinced that the American cause in its revolutionary war was noble, and traveled to the New World seeking glory in it. There, he was made a major general; however, the 19-year-old was initially not given troops to command. Wounded during the Battle of Brandywine, he still managed to organize an orderly retreat. He served with distinction in the Battle of Rhode Island. In the middle of the war, he returned home to lobby for an increase in French support. He again sailed to America in 1780, and was given senior positions in the Continental Army. In 1781, troops in Virginia under his command blocked forces led by Cornwallis until other American and French forces could position themselves for the decisive Siege of Yorktown.', '0', ''),
+(5, 'Nuwara Eliya', 'No', 'Image/img8.jpg', 'Golf Green Bungalow', 'No:123C', 'Grand Hotel Rd.', 2, 8024, 'Born in Chavaniac, in the province of Auvergne in south central France, Lafayette came from a wealthy landowning family. He followed its martial tradition, and was commissioned an officer at age 13. He became convinced that the American cause in its revolutionary war was noble, and traveled to the New World seeking glory in it. There, he was made a major general; however, the 19-year-old was initially not given troops to command. Wounded during the Battle of Brandywine, he still managed to organize an orderly retreat. He served with distinction in the Battle of Rhode Island. In the middle of the war, he returned home to lobby for an increase in French support. He again sailed to America in 1780, and was given senior positions in the Continental Army. In 1781, troops in Virginia under his command blocked forces led by Cornwallis until other American and French forces could position themselves for the decisive Siege of Yorktown.', '0', ''),
+(8, 'Colombo', 'yes', 'img/com/Capture.PNG', 'namal', '335/2', 'hokandara north', 1, 1999, 'yes', '0', '');
 
 -- --------------------------------------------------------
 
@@ -323,7 +300,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `blog_vote`
 --
 ALTER TABLE `blog_vote`
-  MODIFY `vote_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `vote_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `login`
 --
@@ -348,12 +325,12 @@ ALTER TABLE `rentouts`
 -- AUTO_INCREMENT for table `res`
 --
 ALTER TABLE `res`
-  MODIFY `Did` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `Did` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `Rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `Rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `users`
 --

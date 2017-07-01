@@ -3,9 +3,13 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+
 	<link href="../../../../../../../Users/adm/Downloads/Dw B&B/Dw B&B/Booking.css" rel="stylesheet" type="text/css"/>
 
 
@@ -125,6 +129,7 @@
       $c_in=$object->CheckIn;
       $c_out=$object->CheckOut;
       $Did=$object->Did;
+      $user_name=$object->username;
   		?>
 
 
@@ -185,6 +190,10 @@
   						<a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Lists/cancel_reservation/'.$Did) ?>">Cancel reservation</a>	
   						<a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/viewAll/'.$id) ?>">View all </a>
   					</p>
+            <ul> 
+              <li onclick="view_user_details('<?php echo $user_name; ?>')"><a href="#">view user details</a></li>
+            </ul>
+             
   				</div>
   			</td>
   		</tr>
@@ -203,7 +212,60 @@
 
   </div> <!-- Accomodation Catalogue-->
   <!-- <footer>End of the page</footer> -->
+<!--view all  modal-->
+    <div id="view_all" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">All details</h4>
+          </div>
+          <!--modal body-->
+          <div class="modal-body" id="view_all_body">
+                  
+                
+          </div>
+          <!--end of modal body-->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  
 </div>
 
 </body>
+<script>
+  function view_user_details(cp){
+  $compno=cp;
+  
+
+  $.ajax({
+    type: "POST",
+    url: "<?php echo base_url('index.php/Lists/view_user_details'); ?>",
+    data: "cpno="+cp,
+    success: function(data) {
+          //alert("added to database");
+          $('#view_all_body').html(data);
+          $('#view_all').modal('show');
+
+          
+          
+          
+
+      },
+      error: function() {
+        alert("something went wrong");
+      }
+    });
+
+
+}
+
+</script>
 </html>

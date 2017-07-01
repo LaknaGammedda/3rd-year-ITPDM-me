@@ -27,5 +27,16 @@ class Lists extends CI_Controller
 		}
 		
 	}
+	public function view_user_details(){
+		
+		$res=$this->listsModel->view_reserved_user_details();
+		if($res){
+			return $res;
+		}
+		else{
+			return "No data";
+		}
+	}
+
 	
 }

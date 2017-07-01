@@ -126,7 +126,7 @@ mysqli_query($db,"set character_set_results='utf8'");
       $ad2=$object->Address2;
       $id=$object->Rid;
       $price=$object->Price;
-      $uid="1";
+      $username=$object->username;
       
       ?>
 
@@ -187,7 +187,7 @@ mysqli_query($db,"set character_set_results='utf8'");
     </td>
     <td>
       <ul> 
-        <li onclick="view_user_details('<?php echo $uid; ?>')"><a href="#">view user details</a></li>
+        <li onclick="view_user_details('<?php echo $username; ?>')"><a href="#">view renters details</a></li>
       </ul>
     </td>
     <td>

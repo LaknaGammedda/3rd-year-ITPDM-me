@@ -15,8 +15,10 @@
 		
 		$availabilty='yes';
 		// print_r($url);
-		echo "hey";
+		// echo "hey";
 		$url="ada";
+		$status="pending";
+		$username=$this->session->userdata('username');
 		$data = array(
 			
 				   //'name' => $this -> input->post('name'),
@@ -29,7 +31,9 @@
 				'address2'=>$this->input->post('address2'),
 				'NumRooms'=>$this->input->post('select'),
 				'price'=>$this->input->post('price'),
-				'description'=>$this->input->post('des')
+				'description'=>$this->input->post('des'),
+				'status'=>$status,
+				'username'=>$username
 				
 				
 				);

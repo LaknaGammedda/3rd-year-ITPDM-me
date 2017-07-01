@@ -115,15 +115,17 @@ function carousel() {
                  <label for="opt"></label>
                  <select name="opt" id="opt" style="width:200px;  -moz-border-radius:7px;
 	-webkit-border-radius:5px;height:25px">
-                   <option value="Colombo">Colombo</option>
-                   <option value="Kandy">Kandy</option>
-                   <option value="Nuwara Eliya">Nuwara Eliya</option>
-                   <option value="Mirissa">Mirissa</option>
-                   <option value="Sigiriya">Sigiriya</option>
-                   <option value="Negombo">Negombo</option>
-                   <option value="Galle">Galle</option>
-                   <option value="Yala">Yala</option>
-                   <option value="Unawatuna">Unawatuna</option>
+                  <?php 
+                    foreach ($cities as $row) {
+                      $city=$row->Destination;
+                      ?>
+                      <option value="<?php echo $city; ?>"><?php echo $city; ?></option>
+                     
+                      <?php
+                    }
+                  ?>
+                   
+                  
                  </select>
                
                

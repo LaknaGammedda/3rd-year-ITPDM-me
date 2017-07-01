@@ -23,7 +23,12 @@ class listsModel extends CI_Model
        }
     }
 
-    
+    function delete_by_user($Did){
+      
+        $query=$this->db->query("DELETE FROM res WHERE Did= ? ",array($Did));
+         return $query;
+
+    }
 
 
    

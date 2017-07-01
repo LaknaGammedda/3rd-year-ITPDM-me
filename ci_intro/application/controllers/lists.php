@@ -18,5 +18,14 @@ class Lists extends CI_Controller
 	
 	
 	}
+	function cancel_reservation($Did){
+		// echo $Did;
+		$res=$this->listsModel->delete_by_user($Did);
+		if ($res) {
+			 redirect(base_url('/index.php/Lists/user_reservation_list'));
+
+		}
+		
+	}
 	
 }

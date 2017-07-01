@@ -4,13 +4,14 @@ class Cbook extends CI_Controller
 {
 	function mybook()
 	{
+		$username=$this->session->userdata('username');
 		$data = array(
 	
 			'CheckIn' => $this->input->post('txtIn'),
 			'CheckOut' => $this->input->post('txtOut'),
 			'Rid' => $this->input->post('name'),
-			'TeleNo' => $this->input->post('teleNo')
-			
+			'TeleNo' => $this->input->post('teleNo'),
+			'username'=>$username
 			);
 			//Transfering data to Model
 

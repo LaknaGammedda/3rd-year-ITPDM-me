@@ -54,11 +54,10 @@ class Book extends CI_Controller
 
 	        $this->load->view('rating/x/index',$data);
 
-
-		    
-			
-			
 	}
-	
+	function cancel_reservation($Did){
+		echo $Did;
+
+	}
 
 }

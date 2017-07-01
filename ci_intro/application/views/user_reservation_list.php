@@ -124,6 +124,7 @@
   		$price=$object->Price;
       $c_in=$object->CheckIn;
       $c_out=$object->CheckOut;
+      $Did=$object->Did;
   		?>
 
 
@@ -181,7 +182,7 @@
   					<p></p>
 
   					<p>
-  						<a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/index/'.$id) ?>">Cancel reservation</a>	
+  						<a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Lists/cancel_reservation/'.$Did) ?>">Cancel reservation</a>	
   						<a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/viewAll/'.$id) ?>">View all </a>
   					</p>
   				</div>

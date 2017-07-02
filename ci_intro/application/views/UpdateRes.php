@@ -79,7 +79,7 @@ style="margin-top:120px;border:1px solid #ccc;
       <td width="170"><label for="LisName"></label>
      
           
-      <input style="margin-top:8px" value="" type="text" name="name" id="txtNo" /></td>
+      <input style="margin-top:8px" value="<?php echo $updateDetail[0]->Did; ?>" type="text" name="name" id="txtNo" /></td>
     </tr>
 
     <tr>

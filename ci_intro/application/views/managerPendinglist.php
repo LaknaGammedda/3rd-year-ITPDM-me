@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -50,10 +50,7 @@ background-color:#e6e6ff">
     </nav>
   </div>
 </header>
-<br>
-<br>
-<br>
-<br>
+
 
 <?php
 function db_connect(){
@@ -74,144 +71,437 @@ mysqli_query($db,"set character_set_results='utf8'");
 ?>
 
 
+<section class="content" id="display_content" style="padding-top: 0px">
 
-<!-- <div id="container">
- 
- <div id="body">
- <p></p>
- <p><em>&nbsp;&nbsp;Hotels near Kandy , Srilanka</em></p>
+  <br>
 
-
-
-   <div id="A">
-     
-     //
-     
-     <div id="desA"><h3>Kandalama </h3>
-      
-     </div>
-     <div id= "priceA">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LKR 10 800
-        <p></p>
-        
-        <p>
-         <input type="button" id="BtnA" value=" Book Now " >
-       </p>
-     </div>
-   </div>
- -->
+  <section class="content">
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#pending">Pending list</a></li>
+      <li><a data-toggle="tab" href="#accept">Accept list</a></li>
+      <li><a data-toggle="tab" href="#reject">Reject list</a></li>
 
 
+    </ul>
+    <div class="tab-content">
+      <div id="pending" class="tab-pane fade in active">
+        <div class="box box-default">
+          <div class="box-body">
+            <table class="table">
 
- <table class="table">
-    <!-- <thead>
-      <tr>
-        <th></th>
-        <th></th>
-        <th>Email</th>
-      </tr>
-    </thead> -->
-    <tbody>
+              <tbody>
 
 
 
 
 
-     <?php
-     foreach ($dat as $object) {
-      $des= $object->Destination.'<br/>';
-      $a=$object->ImagePath;
-      $name=$object->LodgeName;
-      $ad1=$object->Address1;
-      $ad2=$object->Address2;
-      $id=$object->Rid;
-      $price=$object->Price;
-      $username=$object->username;
-      
-      ?>
+               <?php
+               foreach ($dat as $object) {
+                $des= $object->Destination.'<br/>';
+                $a=$object->ImagePath;
+                $name=$object->LodgeName;
+                $ad1=$object->Address1;
+                $ad2=$object->Address2;
+                $id=$object->Rid;
+                $price=$object->Price;
+                $username=$object->username;
+
+                ?>
 
 
-      <tr>
-       <td><div id="picA"><img src="<?php echo base_url($a);?>" width="260" height="125"></div></td>
-       <td><div id="desA"><h3><?php echo $des; ?></h3>
+                <tr>
+                 <td><div id="picA"><img src="<?php echo base_url($a);?>" width="260" height="125"></div></td>
+                 <td>
+                  <div id="desA"><h3><?php echo $des; ?></h3>
 
-        <?php
-        $id=$object->Rid;
-        $sql = 'SELECT COUNT(DISTINCT(vote_id)) total_rows,IFNULL(SUM(blog_vote),0) total_rating, blog_id
-        FROM blog_vote 
-        WHERE blog_id='.$id.' LIMIT 1';
-        $result3 = $db->query($sql);
-        $row =$result3->fetch_assoc();
+                    <?php
+                    $id=$object->Rid;
+                    $sql = 'SELECT COUNT(DISTINCT(vote_id)) total_rows,IFNULL(SUM(blog_vote),0) total_rating, blog_id
+                    FROM blog_vote 
+                    WHERE blog_id='.$id.' LIMIT 1';
+                    $result3 = $db->query($sql);
+                    $row =$result3->fetch_assoc();
 
-        $total_rows = $row['total_rows'];
-        $total_rating = $row['total_rating'];
-        $results['vote_rows'] = $total_rows;
-        $rating = 0;
-        if ($total_rows > 0) {
-         $rating = $total_rating / $total_rows;
-       }
-       $dec_rating = round($rating, 1);
-				        //echo  $dec_rating;
+                    $total_rows = $row['total_rows'];
+                    $total_rating = $row['total_rating'];
+                    $results['vote_rows'] = $total_rows;
+                    $rating = 0;
+                    if ($total_rows > 0) {
+                     $rating = $total_rating / $total_rows;
+                   }
+                   $dec_rating = round($rating, 1);
+                //echo  $dec_rating;
 
-       $starNumber=$dec_rating;
-       for($x=1;$x<=$starNumber;$x++) {
-         echo '<img src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678064-star-128.png" style="width:35px" />';
-       }
-       if (strpos($starNumber,'.')) {
-         echo '<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/256/Star-Half-Full.png"  style="width:35px"/>';
-         $x++;
-       }
-       while ($x<=5) {
-         echo '<img src="http://time-static-shared.s3-website-us-east-1.amazonaws.com/interactives/how_american_are_you/images/white-star-md.png" style="width:35px" />';
-         $x++;
-       }
+                   $starNumber=$dec_rating;
+                   for($x=1;$x<=$starNumber;$x++) {
+                     echo '<img src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678064-star-128.png" style="width:35px" />';
+                   }
+                   if (strpos($starNumber,'.')) {
+                     echo '<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/256/Star-Half-Full.png"  style="width:35px"/>';
+                     $x++;
+                   }
+                   while ($x<=5) {
+                     echo '<img src="http://time-static-shared.s3-website-us-east-1.amazonaws.com/interactives/how_american_are_you/images/white-star-md.png" style="width:35px" />';
+                     $x++;
+                   }
 
-       ?>
-     </div></td>
-     <td><div id="desA"><h3><?php echo $name; ?></h3></div>
-      <p><?php echo $ad1;?></p>
-      <p><?php echo $ad2;?></p>
+                   ?>
+                 </div></td>
+                 <td><div id="desA"><h3><?php echo $name; ?></h3></div>
+                  <p><?php echo $ad1;?></p>
+                  <p><?php echo $ad2;?></p>
 
-    </td>
-
-
-    <td>
-      <div id= "priceA">
-       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $price; ?>
-       <p></p>
-
-       <p>
-
-        <a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/viewAll/'.$id) ?>">View all </a>
-      </p>
-    </td>
-    <td>
-      <ul> 
-        <li onclick="view_user_details('<?php echo $username; ?>')"><a href="#">view renters details</a></li>
-      </ul>
-    </td>
-    <td>
-      <div class="dropdown">
-        <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Accept/reject
-          <span class="caret"></span></button>
-          <ul class="dropdown-menu">
-            <li><a  href="<?php echo base_url('index.php/Managerlists/accept/'.$id) ?>">accept</a>
-            <li ><a  href="<?php echo base_url('index.php/Managerlists/reject/'.$id) ?>">reject</a></li>
+                </td>
 
 
-          </ul>
-        </div>
+                <td>
+                  <div id= "priceA">
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $price; ?>
+                   <p></p>
+
+                   <p>
+
+                    <a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/viewAll/'.$id) ?>">View all </a>
+                  </p>
+                </td>
+                <td>
+                  <ul> 
+                    <li onclick="view_user_details('<?php echo $username; ?>')"><a href="#">view renters details</a></li>
+                  </ul>
+                </div>
+              </td>
+              <td>
+                <div class="dropdown">
+                  <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Accept/reject
+                    <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                      <li><a  href="<?php echo base_url('index.php/Managerlists/accept/'.$id) ?>">accept</a>
+                        <li ><a  href="<?php echo base_url('index.php/Managerlists/reject/'.$id) ?>">reject</a></li>
+
+
+                      </ul>
+                    </div>
+
+
+
+                  </div>
+                </td>
+              </tr>
+              <?php
+
+            }
+            ?>
+          </tbody>
+        </table>
 
 
 
       </div>
-    </td>
-  </tr>
-  <?php
+    </div>
 
-}
-?>
-</tbody>
+  </div>
+
+
+
+
+  <div id="reject" class="tab-pane fade">
+    <div class="box box-default">
+      <div class="box-body">
+
+        
+        <table class="table">
+
+          <tbody>
+
+
+
+
+
+           <?php
+           foreach ($reject as $object) {
+            $des= $object->Destination.'<br/>';
+            $a=$object->ImagePath;
+            $name=$object->LodgeName;
+            $ad1=$object->Address1;
+            $ad2=$object->Address2;
+            $id=$object->Rid;
+            $price=$object->Price;
+            $username=$object->username;
+
+            ?>
+
+
+            <tr>
+             <td><div id="picA"><img src="<?php echo base_url($a);?>" width="260" height="125"></div></td>
+             <td>
+              <div id="desA"><h3><?php echo $des; ?></h3>
+
+                <?php
+                $id=$object->Rid;
+                $sql = 'SELECT COUNT(DISTINCT(vote_id)) total_rows,IFNULL(SUM(blog_vote),0) total_rating, blog_id
+                FROM blog_vote 
+                WHERE blog_id='.$id.' LIMIT 1';
+                $result3 = $db->query($sql);
+                $row =$result3->fetch_assoc();
+
+                $total_rows = $row['total_rows'];
+                $total_rating = $row['total_rating'];
+                $results['vote_rows'] = $total_rows;
+                $rating = 0;
+                if ($total_rows > 0) {
+                 $rating = $total_rating / $total_rows;
+               }
+               $dec_rating = round($rating, 1);
+                //echo  $dec_rating;
+
+               $starNumber=$dec_rating;
+               for($x=1;$x<=$starNumber;$x++) {
+                 echo '<img src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678064-star-128.png" style="width:35px" />';
+               }
+               if (strpos($starNumber,'.')) {
+                 echo '<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/256/Star-Half-Full.png"  style="width:35px"/>';
+                 $x++;
+               }
+               while ($x<=5) {
+                 echo '<img src="http://time-static-shared.s3-website-us-east-1.amazonaws.com/interactives/how_american_are_you/images/white-star-md.png" style="width:35px" />';
+                 $x++;
+               }
+
+               ?>
+             </div></td>
+             <td><div id="desA"><h3><?php echo $name; ?></h3></div>
+              <p><?php echo $ad1;?></p>
+              <p><?php echo $ad2;?></p>
+
+            </td>
+
+
+            <td>
+              <div id= "priceA">
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $price; ?>
+               <p></p>
+
+               <p>
+
+                <a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/viewAll/'.$id) ?>">View all </a>
+              </p>
+            </td>
+            <td>
+              <ul> 
+                <li onclick="view_user_details('<?php echo $username; ?>')"><a href="#">view renters details</a></li>
+              </ul>
+            </div>
+          </td>
+          <td>
+            <div class="dropdown">
+              <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Accept/reject
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a  href="<?php echo base_url('index.php/Managerlists/accept/'.$id) ?>">accept</a>
+                    <li ><a  href="<?php echo base_url('index.php/Managerlists/reject/'.$id) ?>">reject</a></li>
+
+
+                  </ul>
+                </div>
+
+
+
+              </div>
+            </td>
+          </tr>
+          <?php
+
+        }
+        ?>
+      </tbody>
+    </table>
+
+
+
+
+
+  </div>
+</div>
+
+</div>
+
+
+
+
+<!--search-->
+<div id="accept" class="tab-pane fade">
+  <div class="box box-default">
+    <div class="box-body">
+      
+      <table class="table">
+
+        <tbody>
+
+
+
+
+
+         <?php
+         foreach ($accept as $object) {
+          $des= $object->Destination.'<br/>';
+          $a=$object->ImagePath;
+          $name=$object->LodgeName;
+          $ad1=$object->Address1;
+          $ad2=$object->Address2;
+          $id=$object->Rid;
+          $price=$object->Price;
+          $username=$object->username;
+
+          ?>
+
+
+          <tr>
+           <td><div id="picA"><img src="<?php echo base_url($a);?>" width="260" height="125"></div></td>
+           <td>
+            <div id="desA"><h3><?php echo $des; ?></h3>
+
+              <?php
+              $id=$object->Rid;
+              $sql = 'SELECT COUNT(DISTINCT(vote_id)) total_rows,IFNULL(SUM(blog_vote),0) total_rating, blog_id
+              FROM blog_vote 
+              WHERE blog_id='.$id.' LIMIT 1';
+              $result3 = $db->query($sql);
+              $row =$result3->fetch_assoc();
+
+              $total_rows = $row['total_rows'];
+              $total_rating = $row['total_rating'];
+              $results['vote_rows'] = $total_rows;
+              $rating = 0;
+              if ($total_rows > 0) {
+               $rating = $total_rating / $total_rows;
+             }
+             $dec_rating = round($rating, 1);
+                //echo  $dec_rating;
+
+             $starNumber=$dec_rating;
+             for($x=1;$x<=$starNumber;$x++) {
+               echo '<img src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678064-star-128.png" style="width:35px" />';
+             }
+             if (strpos($starNumber,'.')) {
+               echo '<img src="https://cdn4.iconfinder.com/data/icons/pretty_office_3/256/Star-Half-Full.png"  style="width:35px"/>';
+               $x++;
+             }
+             while ($x<=5) {
+               echo '<img src="http://time-static-shared.s3-website-us-east-1.amazonaws.com/interactives/how_american_are_you/images/white-star-md.png" style="width:35px" />';
+               $x++;
+             }
+
+             ?>
+           </div></td>
+           <td><div id="desA"><h3><?php echo $name; ?></h3></div>
+            <p><?php echo $ad1;?></p>
+            <p><?php echo $ad2;?></p>
+
+          </td>
+
+
+          <td>
+            <div id= "priceA">
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $price; ?>
+             <p></p>
+
+             <p>
+
+              <a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/viewAll/'.$id) ?>">View all </a>
+            </p>
+          </td>
+          <td>
+            <ul> 
+              <li onclick="view_user_details('<?php echo $username; ?>')"><a href="#">view renters details</a></li>
+            </ul>
+          </div>
+        </td>
+        <td>
+          <div class="dropdown">
+            <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Accept/reject
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a  href="<?php echo base_url('index.php/Managerlists/accept/'.$id) ?>">accept</a>
+                  <li ><a  href="<?php echo base_url('index.php/Managerlists/reject/'.$id) ?>">reject</a></li>
+
+
+                </ul>
+              </div>
+
+
+
+            </div>
+          </td>
+        </tr>
+        <?php
+
+      }
+      ?>
+    </tbody>
+  </table>
+
+</div>
+</div>
+
+</div>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

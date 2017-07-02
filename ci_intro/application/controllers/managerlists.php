@@ -7,9 +7,11 @@ class Managerlists extends CI_Controller
         parent::__construct();
         	$this->load->model('managerlistModel');
     }
-	function new_rentout()
+	function rentout_status()
 	{
 		$data['dat']=$this->managerlistModel->new_rentout();
+		$data['accept']=$this->managerlistModel->accept_rentout();
+		$data['reject']=$this->managerlistModel->reject_rentout();
 		$this->load->view('managerPendinglist',$data);
 		
 

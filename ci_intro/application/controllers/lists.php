@@ -34,6 +34,30 @@ class Lists extends CI_Controller
 		 $this->load->view('UpdateRes',$data);
 		
 		}
+
+
+
+	function Update_reservation_savedata(){
+		//edit this 
+		$data=array(
+			'date_received'=>$this->input->post('date_received'),
+			'person_received'=>$this->input->post('person'),
+			'source'=>$this->input->post('source'),
+			'no'=>$this->input->post('no'),
+			'nature'=>$this->input->post('nature')
+			); 
+		//edit this to Did
+		$this->db->where('complaint_no', $no);  
+		//edit to res table
+		$res=$this->db->update('complaint_nature', $data);  
+		if($res){
+			return true;
+		}
+		else{
+			return false;
+		}
+		
+		}
 		
 	
 	public function view_user_details(){

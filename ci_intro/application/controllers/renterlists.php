@@ -20,7 +20,11 @@ class Renterlists extends CI_Controller
 
 	function UpdateRentouts($id){
 
+        $res['title']='Update Rent Outs';
 		echo $id;
+		$res['UpdatedData']=$this->renterlistsModel->UpdateRentOuts($id);
+		//print_r($res) ;
+		$this->load->view('UpdateRent',$res);
 	}
 
 	

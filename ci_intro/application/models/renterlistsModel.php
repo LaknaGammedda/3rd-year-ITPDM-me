@@ -54,6 +54,18 @@ class renterlistsModel extends CI_Model
    }
  }
 
+function UpdateRentOuts($id){
 
+        
+        $query=$this->db->query("SELECT * FROM reservation WHERE Rid= ? ",array($id));
+       if($query->num_rows()>0)
+       {
+         return $query->result();
+       }
+       else
+       {
+         return $query->result();
+       }
+     }
 
 }

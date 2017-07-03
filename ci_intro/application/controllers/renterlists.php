@@ -13,10 +13,14 @@ class Renterlists extends CI_Controller
 		$data['accept']=$this->renterlistsModel->accept_rentout();
 		$data['reject']=$this->renterlistsModel->reject_rentout();
 		$this->load->view('renterlists',$data);
-		
+			
+	
+	}
 
-	
-	
+
+	function UpdateRentouts($id){
+
+		echo $id;
 	}
 
 	

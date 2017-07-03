@@ -83,7 +83,7 @@ function carousel() {
 </script>
 <br>
 
- <form name="form1" method="post" action="<?php echo base_url('index.php/CheckD/compareDate');?>">
+ <form name="form1" method="post" action="<?php echo base_url('index.php/compereChechkinCheckout/compareDate');?>">
     <div class="container" id="divmaintab">
 
         <div class="row" >

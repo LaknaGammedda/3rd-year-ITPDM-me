@@ -86,13 +86,13 @@ style="margin-top:120px;border:1px solid #ccc;
       <td><p style="font-family:'Times New Roman', Times, serif;font-size:14px;font-weight:bold;color:#009">Check In</p></td>
       <td><label for="txtIn"></label>
       <input
-	 type="Date" name="txtIn" id="txtIn" /></td>
+	 type="Date" value="<?php echo $updateDetail[0]->CheckIn; ?>" name="txtIn" id="txtIn" /></td>
     </tr>
 
     <tr>
       <td><p style="font-family:'Times New Roman', Times, serif;font-size:14px;font-weight:bold;color:#009">Check Out</p></td>
       <td><label for="txtOut"></label>
-      <input type="Date" name="txtOut" id="txtOut" /></td>
+      <input type="Date" value="<?php echo $updateDetail[0]->CheckOut; ?>" name="txtOut" id="txtOut" /></td>
     </tr>
 
     <!-- <tr>
@@ -103,7 +103,7 @@ style="margin-top:120px;border:1px solid #ccc;
     <tr>
       <td><p style="font-family:'Times New Roman', Times, serif;font-size:14px;font-weight:bold;color:#009">Telephone</p></td>
       <td><label for="txtNo"></label>
-      <input style="margin-top:8px" type="text" name="teleNo" id="txtNo" /></td>
+      <input style="margin-top:8px" type="text" value="<?php echo $updateDetail[0]->TeleNo; ?>" name="teleNo" id="txtNo" /></td>
     </tr>
 
     <tr>

@@ -68,19 +68,19 @@ class Mylogin extends CI_Controller{
 
 function enter()
 {
-	if($this->session->userdata('username')!='')
-	{
-   echo '<h2> Welcome -'.$this->session->userdata('username').'</h2>';
-  }
- else
- {
-  redirect(base_url('/index.php/Mylogin/logout'));   
- }
+	  if($this->session->userdata('username')!='')
+	  {
+       echo '<h2> Welcome -'.$this->session->userdata('username').'</h2>';
+    }
+   else
+    {
+      redirect(base_url('/index.php/Mylogin/logout'));   
+    }
 }
 
 function logout()
-{
-	$this->session->unset_userdata('username');
-  redirect(base_url('/index.php/Mylogin/login'));
-}
+  {
+	  $this->session->sess_destroy();
+    redirect(base_url('/index.php/CheckD/mydate'));
+  }
 }

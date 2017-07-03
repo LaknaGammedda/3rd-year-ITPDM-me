@@ -44,7 +44,7 @@ background-color:#e6e6ff">
           <a href="#">Facilities</a>
         </li>
         <li>
-          <a href="#">Login</a>
+          <a href="<?php echo base_url('index.php/Mylogin/login');?>">Login</a>
         </li>
       </ul>
     </nav>

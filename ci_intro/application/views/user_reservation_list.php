@@ -188,6 +188,7 @@
 
   					<p>
   						<a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Lists/cancel_reservation/'.$Did) ?>">Cancel reservation</a>	
+              <a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Lists/update_reservation/'.$Did) ?>">Update reservation</a> 
   						<a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/viewAll/'.$id) ?>">View all </a>
   					</p>
             <ul> 

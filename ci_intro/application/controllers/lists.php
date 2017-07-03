@@ -27,6 +27,15 @@ class Lists extends CI_Controller
 		}
 		
 	}
+
+	function Update_reservation($Did){
+		
+		 $data['updateDetail']=$this->listsModel->update_by_user($Did);
+		 $this->load->view('UpdateRes',$data);
+		
+		}
+		
+	
 	public function view_user_details(){
 		
 		$res=$this->listsModel->view_reserved_user_details();

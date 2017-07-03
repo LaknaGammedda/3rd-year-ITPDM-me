@@ -43,12 +43,30 @@ class listsModel extends CI_Model
       }
       else{
           return false;
-      }
-
-
-        
+      }        
 
     }
+
+
+         function Update_by_user($Did){
+
+        
+        $query=$this->db->query("SELECT * FROM res WHERE Did= ? ",array($Did));
+       if($query->num_rows()>0)
+       {
+         return $query->result();
+       }
+       else
+       {
+         return $query->result();
+       }
+
+    }
+
+
+
+    
+
 
 
     function view_reserved_user_details(){

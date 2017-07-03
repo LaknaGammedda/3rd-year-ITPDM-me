@@ -68,7 +68,7 @@ input[type="Text"]
 <form 
 style="margin-top:120px;border:1px solid #ccc;
        box-shadow:0 1px 25px;width:450px;margin-left:400px;background-color:#FFF"
-       id="form1" name="form1" method="post" action="">
+       id="form1" name="form1" method="post" action=" <?php echo base_url('index.php/Lists/Update_reservation_savedata') ?>">
         <?php 
         print_r($updateDetail);?>
   <table width="281" border="0" align="center">

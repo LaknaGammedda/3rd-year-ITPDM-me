@@ -39,19 +39,20 @@ class Lists extends CI_Controller
 
 	function Update_reservation_savedata(){
 		//edit this 
+		$Did = $this->input->post('name');
 		$data=array(
-			'date_received'=>$this->input->post('date_received'),
-			'person_received'=>$this->input->post('person'),
-			'source'=>$this->input->post('source'),
-			'no'=>$this->input->post('no'),
-			'nature'=>$this->input->post('nature')
+			
+			'CheckIn'=>$this->input->post('txtIn'),
+			'CheckOut'=>$this->input->post('txtOut'),
+			'TeleNo'=>$this->input->post('teleNo')
+			
 			); 
 		//edit this to Did
-		$this->db->where('complaint_no', $no);  
+		$this->db->where('Did', $Did);  
 		//edit to res table
-		$res=$this->db->update('complaint_nature', $data);  
+		$res=$this->db->update('res', $data);  
 		if($res){
-			return true;
+			 redirect(base_url('/index.php/Lists/user_reservation_list'));
 		}
 		else{
 			return false;

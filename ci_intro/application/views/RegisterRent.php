@@ -101,18 +101,10 @@
 
  <br>  -->
 <p> </p>
-  <button style="width:300px;background-color: #005c99" type="submit" class="btn btn-default" name="btnAdd">Next</button> 
+  <button style="width:300px;float:left;background-color: #005c99" type="submit" class="btn btn-default" name="btnAdd">Next</button> 
   
-</form>
-<form id="uploadimage" enctype='multipart/form-data'>
-              
-              <div class="form-group">
-                <input type="file" name="file" id="file">
-              </div>
-              <div class="form-group">
-                <input type="button" name="" class="btn btn-primary" onclick="uploadfile()" value="upload">
-              </div>
-</form>
+  
+
 
 
 

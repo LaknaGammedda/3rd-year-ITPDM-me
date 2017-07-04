@@ -56,7 +56,9 @@
                 <input type="file" name="file" id="file">
               </div>
               <div class="form-group">
-                <input type="button" name="" class="btn btn-primary" onclick="uploadfile()" value="upload">
+                <input style="width:110px;float:left;background-color: #005c99" type="button"  name="" class="btn btn-default" onclick="uploadfile()" value="upload">
+                <button style="width:110px;float:right;background-color: #005c99" type="submit" class="btn btn-default" name="btnAdd"  onClick="window.location.href = '<?php echo base_url();?>index.php/Renterlists/lists';return false;" >View All</button> 
+  
               </div>
 </form>
 
@@ -64,7 +66,7 @@
 
 </div>
 <br><br><br><br><br><br>
-  <div class="container" id="footer" style="max-width:100%;height:43px;margin-bottom:none;">
+  <div class="container" id="footer" style="max-width:100%;height:45px;margin-top:280px;">
       <p>CopyRight2017 Bed and Breakfast private limited.</p>
      </div>
 </body>

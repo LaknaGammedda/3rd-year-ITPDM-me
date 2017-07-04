@@ -1,36 +1,34 @@
 <?php if(!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Cbook extends CI_Controller
+class PaymentsCon extends CI_Controller
+
 {
-	function mybook()
+	function Pay()
 	{
-		$username=$this->session->userdata('username');
-		$data = array(
-	
-			'CheckIn' => $this->input->post('txtIn'),
-			'CheckOut' => $this->input->post('txtOut'),
-			'Rid' => $this->input->post('name'),
-			'TeleNo' => $this->input->post('teleNo'),
-			'username'=>$username
-			);
-			//Transfering data to Model
-
-
-			$this->db->insert('res', $data);
-
-
-
-			$no=$this->input->post('name');
-			$x="No";
-			$data1=array(
-				'Availability'=>$x,
-				
-				);
-			$this->db->where('Rid', $no);  
-			$res=$this->db->update('reservation', $data1);  
-			$this->load->view('thankyou');
-
-
-
+	  $this->load->view('PaymentsV');
+	   $this->load->library('form_validation');
+	   $this->form_validation->set_rules('cardnumber', 'Card Number', 'trim|required|xss_clean|callback_cardnumber_validation');
+    	$this->form_validation->set_rules('name', 'CardName', 'trim|required|xss_clean|callback_cardnumber_validation');
+	   
 	}
+	
+
+
+    
+
+
+    function cardnumber_validation($string = NULL)
+	 {
+       $this->load->helper('credit_card'); // loading helper.
+      if (checkCreditCard ($string, $cardtype, $ccerror, $ccerrortext))
+        {
+           echo "card is ok";
+        }
+
+      else
+       {
+          $this->form_validation->set_message("cardnumber_validation", 'The %s is not valid.');
+          echo "wrong card type/number";
+       }
+  }
 }

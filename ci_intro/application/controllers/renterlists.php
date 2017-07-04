@@ -39,38 +39,33 @@ class Renterlists extends CI_Controller
 
 	}
 
-	function UpdateRen_savedata($id){
+	function UpdateRen_savedata(){
 		//edit this 
 		
 		$data=array(
-			
 			'Address1'=>$this->input->post('address1'),
 			'Address2'=>$this->input->post('address2'),
 			'Destination'=>$this->input->post('city'),
 			'Price'=>$this->input->post('price'),
 			'LodgeName'=>$this->input->post('lname'),
-			'NumRooms'=>$this->input->post('select'),
+			'NumRooms'=>$this->input->post('select')
 			
 			); 
-		//edit this to Did
+		$id=$this->input->post('name');
+		print_r($data);
+		echo $id;
 		$this->db->where('Rid', $id);  
-		//edit to res table
+		
 		$res=$this->db->update('reservation', $data);  
 		if($res){
+
 			  $this->load->view('UpdateImages');
-			 redirect(base_url('/index.php/Renterlists/lists'));
+			 // redirect(base_url('/index.php/Renterlists/lists'));
 		}
 		else{
 			return false;
 		}
 		
 		}
-
-
-
-		
-
-	
-
 	
 }

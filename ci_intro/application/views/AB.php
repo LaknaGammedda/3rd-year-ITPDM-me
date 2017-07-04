@@ -78,8 +78,9 @@ style="margin-top:120px;border:1px solid #ccc;
       <td width="105"><p style="font-family:'Times New Roman', Times, serif;font-size:14px;font-weight:bold;color:#009">Name of Lodge</p></td>
       <td width="170"><label for="LisName"></label>
      
-          
-      <input style="margin-top:8px" value="<?php echo $des;?>" type="text" name="name" id="txtNo" /></td>
+      <input style="margin-top:8px" value="<?php echo $res[0]->LodgeName;?>" type="text" name="name1" id="txtNo" /></td>
+      <input style="margin-top:8px" value="<?php echo $des;?>" type="hidden" name="name" id="txtNo" /></td>
+
     </tr>
 
     <tr>

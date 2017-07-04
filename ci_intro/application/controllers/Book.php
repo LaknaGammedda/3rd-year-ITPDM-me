@@ -5,6 +5,8 @@ class Book extends CI_Controller
 	function index($des)
 	{
 		$data['des']=$des;
+		$query1=$this->db->query("SELECT * FROM reservation WHERE Rid= ? ",array($des));
+		$data['res']=$query1->result();
 		if($this->session->userdata('username')!='')
 			{
 

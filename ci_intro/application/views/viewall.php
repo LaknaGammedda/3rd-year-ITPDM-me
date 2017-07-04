@@ -79,7 +79,7 @@ mysqli_query($db,"set character_set_results='utf8'");
     	<div class="row">
     		<div class="col-md-8">
 
-		     	<div id="desA"><h3 "><?php echo $name.' '.$des; ?></h3>
+		     	<div id="desA"><h3 ><?php echo $name.' '.$des; ?></h3>
 		     		
 			     	<?php
 			        	$id=$object1->Rid;
@@ -127,7 +127,7 @@ mysqli_query($db,"set character_set_results='utf8'");
 
      	<div id= "priceA">
 		        <p>
-		        	<a style="background-color:#005c99;color:#FFF"  class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/index/'.$des) ?>">Book Now </a>	
+		        	<a style="background-color:#005c99;color:#FFF"  class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/index/'.$id) ?>">Book Now </a>	
 		        	
 		       </p>
      	</div>

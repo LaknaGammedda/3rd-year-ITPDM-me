@@ -47,13 +47,14 @@
     <br>
   <div style="margin-top:30px"class="container">
     <h2 style="font-size:16px;font-weight:bold;font-family:Verdana;text-align:center;margin-bottom:1px">One more step ad you are finished</h2>
+    <h2 style="font-size:16px;font-weight:bold;font-family:Verdana;text-align:center;margin-bottom:1px">Add new image</h2>
     
 
 
 <form id="uploadimage" enctype='multipart/form-data'>
               
               <div class="form-group">
-                <input type="file"  name="file" id="file">
+                <input type="file" name="file" id="file">
               </div>
               <div class="form-group">
                 <input style="width:110px;float:left;background-color: #005c99" type="button"  name="" class="btn btn-default" onclick="uploadfile()" value="upload">
@@ -78,7 +79,7 @@ function uploadfile(){
       $.ajax({
   url: "<?php echo base_url('index.php/fileupload/uploadPicture'); ?>", // Url to which the request is send
   type: "POST",             // Type of request to be send, called as method
-  data: new FormData(document.getElementById("UpdateImages")), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+  data: new FormData(document.getElementById("uploadimage")), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
   contentType: false,       // The content type used when sending data to the server.
   cache: false,             // To unable request pages to be cached
   processData:false,        // To send DOMDocument or non processed data file it is set to false

@@ -2,22 +2,22 @@
 
 class Dat_Model extends CI_Model
 {
-    function datee($startDate,$des)
-    {
+    // function datee($startDate,$des)
+    // {
 
-      $No="No";
+    //   $No="No";
 
-       $query=$this->db->query("SELECT * FROM reservation as r INNER JOIN res as re on r.Rid= re.Rid WHERE r.Availability= ? and r.Destination= ?  and re.CheckOut<? ",array($No,$des,$startDate));
+    //    $query=$this->db->query("SELECT * FROM reservation as r INNER JOIN res as re on r.Rid= re.Rid WHERE r.Availability= ? and r.Destination= ?  and re.CheckOut<? ",array($No,$des,$startDate));
 
-       if($query->num_rows()>0)
-       {
-       	 return $query->result();
-       }
-       else
-       {
-       	 return $query->result();
-       }
-    }
+    //    if($query->num_rows()>0)
+    //    {
+    //    	 return $query->result();
+    //    }
+    //    else
+    //    {
+    //    	 return $query->result();
+    //    }
+    // }
 
      function compare($startDate,$endDate,$des)
     {

@@ -49,12 +49,12 @@
     <h2 style="font-size:16px;font-weight:bold;font-family:Verdana;text-align:center;margin-bottom:1px"><?= $title ?></h2>
     <?php echo validation_errors(); ?>
 
-<?php echo  form_open_multipart('Renterlists /UpdateRen_savedata'); ?>
+<?php echo  form_open_multipart('Renterlists/UpdateRen_savedata'); ?>
 
-  <!--<div class="form-group">
-    <label>Renter Name :</label>
-    <input type="text" class="form-control" name="name"/>
-  </div>-->
+  <!-- <div class="form-group">
+    <label>Renter Name :</label> -->
+    <input type="hidden" class="form-control" name="name" value="<?php echo $UpdatedData[0]->Rid; ?>"/>
+ <!--  </div> -->
   <div class="form-group" >
     <label style="margin-top:15px">Address Line 1:</label>
     <input style="width:300px;height:35px"type="text" value="<?php echo $UpdatedData[0]->Address1; ?>" class="form-control" name="address1"/>

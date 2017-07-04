@@ -95,16 +95,15 @@ style="margin-top:120px;border:1px solid #ccc;
       <input type="Date" name="txtOut" id="txtOut" /></td>
     </tr>
 
-    <!-- <tr>
-      <td><p style="font-family:'Times New Roman', Times, serif;font-size:14px;font-weight:bold;color:#009">City</p></td>
-      
-    </tr> -->
+   
 
     <tr>
       <td><p style="font-family:'Times New Roman', Times, serif;font-size:14px;font-weight:bold;color:#009">Telephone</p></td>
       <td><label for="txtNo"></label>
       <input style="margin-top:8px" type="text" name="teleNo" id="txtNo" /></td>
     </tr>
+
+
 
     <tr>
       <td>&nbsp;</td>

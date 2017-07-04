@@ -49,7 +49,7 @@ class Mylogin extends CI_Controller{
 
         else
          {
-            $this->load->view('Home');
+            redirect(base_url('/index.php/CheckD/myDate'));
          }
 
       }

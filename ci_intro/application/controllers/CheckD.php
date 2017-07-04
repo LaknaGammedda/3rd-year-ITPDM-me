@@ -9,6 +9,7 @@ class CheckD extends CI_Controller
 		$res=$this->getcitiesModel->city();
 		$data['cities']=$res;
 		$this->load->view('Home',$data);
+
 	
 	
 		$this->load->library('form_validation');

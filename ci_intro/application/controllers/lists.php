@@ -8,7 +8,6 @@ class Lists extends CI_Controller
     }
 	function user_reservation_list()
 	{
-		//$this->load->view('Home');
 		
 		$username=$this->session->userdata('username');
 		$data['dat']=$this->listsModel->user_view_list($username);

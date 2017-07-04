@@ -106,10 +106,20 @@ style="margin-top:120px;border:1px solid #ccc;
 
 
     <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <input style="width:300px;-webkit-border-radius:3px;height:35px;margin-bottom:20px;background-color: #005c99;color:#FFF" type="submit" name="btnRes" id="btnRes" value="Reserve" /></td>
+      <td></td>
+      <td>
+      <input style="width:120px;float:left;-webkit-border-radius:3px;height:35px;margin-bottom:20px;background-color: #005c99;color:#FFF" 
+             type="submit" name="btnRes" id="btnRes" value="Reserve"/>
+            <input style="width:120px;float:right;-webkit-border-radius:3px;height:35px;margin-bottom:20px;background-color: #005c99;color:#FFF" 
+             type="submit" name="btnRes" id="btnRes" value="View All"
+             onClick="window.location.href = '<?php echo base_url();?>index.php/Lists/user_reservation_list';return false;"/></td>
+      
+     
+            
+     
     </tr>
+
+    
   </table>
 </form>
 

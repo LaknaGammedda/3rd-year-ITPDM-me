@@ -8,11 +8,12 @@ class PaymentsCon extends CI_Controller
     $name=$this->session->userdata('username');
     $query2=$this->db->query("SELECT * FROM register WHERE Username= ? ",array($name));
     $data['user']=$query2->result();
-	  $this->load->view('PaymentsV',$data);
+	  
 	   $this->load->library('form_validation');
 	   $this->form_validation->set_rules('cardnumber', 'Card Number', 'trim|required|xss_clean|callback_cardnumber_validation');
-    	$this->form_validation->set_rules('name', 'CardName', 'trim|required|xss_clean|callback_cardnumber_validation');
-	   
+    $this->form_validation->set_rules('name', 'CardName', 'trim|required|xss_clean|callback_cardnumber_validation');
+    $this->form_validation->run();
+	   $this->load->view('PaymentsV',$data);
 	}
 	
 

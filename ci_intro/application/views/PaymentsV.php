@@ -80,8 +80,13 @@ style="margin-top:120px;border:1px solid #ccc;
       <td width="105"><p style="font-family:'Times New Roman', Times, serif;font-size:14px;font-weight:bold;color:#009">Name of Card</p></td>
       <td width="170"><label for="LisName"></label>
      
-          
-      <input style="margin-top:8px" value="" type="text" name="name" id="txtName" /></td>
+      <select class="form-control select2" style="width: 100%;" name="name">           
+                      <option value="American Express">American Express</option>
+                      <option value="Master Card">Master Card</option>
+                      <option value="Visa Card">Visa Card</option>
+                     
+      </select>
+      <!-- <input style="margin-top:8px" value="" type="text" name="name" id="txtName" /></td> -->
     </tr>
 
     <tr>
@@ -90,6 +95,11 @@ style="margin-top:120px;border:1px solid #ccc;
       <input style="margin-top:8px" value="" type="text" name="cardnumber" id="txtNo" /></td>
     </tr>
 
+     <tr>
+      <td width="105"><p style="font-family:'Times New Roman', Times, serif;font-size:14px;font-weight:bold;color:#009">Exp Date</p></td>
+      <td width="170"><label for="LisNo"></label>            
+      <input style="margin-top:8px" value="" type="text" name="exp" id="txtNo" /></td>
+    </tr>
   
 
 

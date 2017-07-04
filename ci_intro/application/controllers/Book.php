@@ -9,7 +9,9 @@ class Book extends CI_Controller
 		$data['res']=$query1->result();
 		if($this->session->userdata('username')!='')
 			{
-
+			   $name=$this->session->userdata('username');
+			   $query2=$this->db->query("SELECT * FROM register WHERE Username= ? ",array($name));
+			   $data['user']=$query2->result();
 		       $this->load->view('AB',$data);
 			}
 			else

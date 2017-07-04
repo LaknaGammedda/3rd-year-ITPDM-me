@@ -48,12 +48,18 @@
 <form 
 style="margin-top:120px;border:1px solid #ccc;
        box-shadow:0 1px 25px;width:450px;margin-left:400px;background-color:#FFF"
-       id="form1" name="form1" method="post" action="<?php echo base_url('index.php/Cbook/mybook');?>">
+       id="form1" name="form1" method="post" action="<?php echo base_url('index.php/PaymentsCon/Pay');?>">
        <h3 >RESERVATION SUCCESFULLY COMPLETED</h3>
         <h2>THANK YOU FOR USING B&B</h2>
+        <input style="width:120px;float:left;-webkit-border-radius:3px;height:35px;margin-bottom:20px; text-align:center;background-color: #005c99;color:#FFF" 
+             type="submit" name="btnRes" id="btnRes" value="ADD PAYMENT"/>
+
+
 </form>
 
 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+<br /><br /><br /><br /><br /><br /><br /><br />
  <div class="container" id="footer" style="max-width:100%;height:54px;margin-bottom:none">
       <p style="padding-top:20px">CopyRight2017 Bed and Breakfast private limited.</p>
  </div>

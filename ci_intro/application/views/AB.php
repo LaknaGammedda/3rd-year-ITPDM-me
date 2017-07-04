@@ -64,7 +64,9 @@ input[type="Text"]
     <br>
     <br>
     <br>
-
+<div style="text-align:center;">
+   
+</div>
 <form 
 style="margin-top:120px;border:1px solid #ccc;
        box-shadow:0 1px 25px;width:450px;margin-left:400px;background-color:#FFF"
@@ -75,6 +77,9 @@ style="margin-top:120px;border:1px solid #ccc;
 
     <tr>
       <p style="text-align:center;font-family:'Lucida Calligraphy';font-size:18px;font-weight:bold;color:#009">Reservation</p>
+      <h2 style="text-align:center;font-family:'Lucida Calligraphy';font-size:18px;font-weight:bold;color:#009">User name: <?php echo $user[0]->firstName."  ".$user[0]->lastName?></h2> 
+      <p style="text-align:center;font-family:'Lucida Calligraphy';font-size:18px;font-weight:bold;color:#009">Email: <?php echo $user[0]->Email?></p>
+      
       <td width="105"><p style="font-family:'Times New Roman', Times, serif;font-size:14px;font-weight:bold;color:#009">Name of Lodge</p></td>
       <td width="170"><label for="LisName"></label>
      

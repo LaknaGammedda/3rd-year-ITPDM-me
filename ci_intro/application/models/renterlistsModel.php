@@ -68,4 +68,16 @@ function UpdateRentOuts($id){
        }
      }
 
+
+       function deleteRent($id){
+
+       
+        $query=$this->db->query("DELETE  FROM reservation WHERE Rid= ? ",array($id));
+        return $query;
+      
+     
+             
+
+    }
+
 }

@@ -17,6 +17,16 @@ class Renterlists extends CI_Controller
 	
 	}
 
+	function cancelRent($id){
+		echo $id;
+		$res=$this->renterlistsModel->deleteRent($id);
+		if ($res) {
+			 redirect(base_url('/index.php/Renterlists/lists'));
+
+		}
+		
+	}
+
 
 	function UpdateRentouts($id){
 
@@ -25,6 +35,8 @@ class Renterlists extends CI_Controller
 		$res['UpdatedData']=$this->renterlistsModel->UpdateRentOuts($id);
 		print_r($res) ;
 		$this->load->view('UpdateRent',$res);
+
+
 	}
 
 	function UpdateRen_savedata($id){
@@ -45,7 +57,7 @@ class Renterlists extends CI_Controller
 		//edit to res table
 		$res=$this->db->update('reservation', $data);  
 		if($res){
-			 $this->load->view('UpdateImages');
+			  $this->load->view('UpdateImages');
 			 redirect(base_url('/index.php/Renterlists/lists'));
 		}
 		else{
@@ -53,6 +65,9 @@ class Renterlists extends CI_Controller
 		}
 		
 		}
+
+
+
 		
 
 	

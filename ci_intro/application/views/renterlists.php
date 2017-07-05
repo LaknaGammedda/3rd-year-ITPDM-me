@@ -176,7 +176,7 @@ mysqli_query($db,"set character_set_results='utf8'");
                     <span class="caret"></span></button>
                     <ul class="dropdown-menu">
                       <li><a  href="<?php echo base_url('index.php/renterlists/UpdateRentouts/'.$id) ?>">Edit</a>
-                        <li ><a  href="<?php echo base_url('index.php/Managerlists/reject/'.$id) ?>">Delete</a></li>
+                        <li ><a  href="<?php echo base_url('index.php/Renterlists/cancelRent'.$id) ?>">Delete</a></li>
 
 
                       </ul>
@@ -297,8 +297,8 @@ mysqli_query($db,"set character_set_results='utf8'");
               <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Edit/Delete
                 <span class="caret"></span></button>
                 <ul class="dropdown-menu">
-                  <li><a  href="<?php echo base_url('index.php/renterlists/UpdateRentouts/'.$id) ?>">Edit</a>
-                    <li ><a  href="<?php echo base_url('index.php/Managerlists/reject/'.$id) ?>">Delete</a></li>
+                  <li><a  href="<?php echo base_url('index.php/Renterlists/UpdateRentouts/'.$id) ?>">Edit</a>
+                    <li ><a  href="<?php echo base_url('index.php/Renterlists/cancelRent/'.$id) ?>">Delete</a></li>
 
 
                   </ul>
@@ -421,8 +421,8 @@ mysqli_query($db,"set character_set_results='utf8'");
             <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Edit/Delete
               <span class="caret"></span></button>
               <ul class="dropdown-menu">
-                <li><a  href="<?php echo base_url('index.php/renterlists/UpdateRentouts/'.$id) ?>">Edit</a>
-                  <li ><a  href="<?php echo base_url('index.php/Managerlists/reject/'.$id) ?>">Delete</a></li>
+                <li><a  href="<?php echo base_url('index.php/Renterlists/UpdateRentouts/'.$id) ?>">Edit</a>
+                  <li ><a  href="<?php echo base_url('index.php/Renterlists/cancelRent/'.$id) ?>">Delete</a></li>
 
 
                 </ul>

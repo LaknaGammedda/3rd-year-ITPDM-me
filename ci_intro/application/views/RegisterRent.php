@@ -101,8 +101,8 @@
 
  <br>  -->
 <p> </p>
-  <button style="width:300px;float:left;background-color: #005c99" type="submit" class="btn btn-default" name="btnAdd">Next</button> 
-  
+  <button style="width:110px;float:left;background-color: #005c99" type="submit" class="btn btn-default" name="btnAdd">Next</button> 
+  <button style="width:110px;float:right;background-color: #005c99" type="submit" class="btn btn-default" name="btnAdd"  onClick="window.location.href = '<?php echo base_url();?>index.php/Renterlists/lists';return false;" >View All</button> 
   
 
 

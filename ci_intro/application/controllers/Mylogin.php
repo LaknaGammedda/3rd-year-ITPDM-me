@@ -29,8 +29,8 @@ class Mylogin extends CI_Controller{
 
       if($this->Login_model->can_login($username,$password))// If username & password valid create a session
       {
-         $session_data= $arrayName = array('username' =>$username);
-         $this->session->set_userdata($session_data);
+         $session_data= $arrayName = array('username' =>$username);// Add session details using associative array
+         $this->session->set_userdata($session_data);// create session
 
          $role=$this->Login_model->user_role($username,$password);// access to user_role method in login_model
 

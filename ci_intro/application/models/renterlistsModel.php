@@ -56,7 +56,8 @@ class renterlistsModel extends CI_Model
 
 function UpdateRentOuts($id){
 
-        
+        $session_data=  array('Rid' =>$id);
+        $this->session->set_userdata($session_data);
         $query=$this->db->query("SELECT * FROM reservation WHERE Rid= ? ",array($id));
        if($query->num_rows()>0)
        {

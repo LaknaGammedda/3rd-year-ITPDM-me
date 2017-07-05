@@ -38,8 +38,8 @@
 		  background-color:white;
 		  border:1px solid #FFF;
 		  vertical-align: middle;
-          width: 300px;
-          height: 250px;
+          width: 320px;
+          height: 288px;
 		  margin-left: 360px;
 		  box-shadow:1px 0px 15px #00134d;
 	  }
@@ -62,7 +62,7 @@
 	  input[type=text],input[type=password],
 	  {  
 	      
-		  padding:20px;
+		  padding:35px;
 
 		  border-radius:3px;
 		  font-size:14px;
@@ -73,7 +73,7 @@
 		  /*;*/
 		  /*margin:48px;*/
 		  /*margin-left:10px;		  */
-		  margin-top:10px;
+		  margin-top:20px;
 		  background-color:25b2d5;
 		  padding:5px 10px 5px 10 px;
 		  border-radius:3px;
@@ -173,7 +173,7 @@
                 <span class="text-danger"><?php echo form_error('username'); ?></span>
 
                
-                <input style="height:25px; -moz-border-radius:6px;
+                <input style="height:25px;margin-top:30px; -moz-border-radius:6px;
 	                          -webkit-border-radius:5px;margin-left: 63px; background-color:#b3c6ff"
 	                           type="password" name="pass" placeholder="Password"/>
               	<span class="text-danger"><?php echo form_error('pass'); ?></span>
@@ -184,9 +184,12 @@
 	                <button style="float:left;border-radius:3px;border:1px solid #319db8;background-color:#005c99;height: 25px;
 	                              width:70px;font-size: 11px; "
 	                              type="submit" name="valid" vlaue="Login">Login</button>
-	                 <?php
-	                    echo '<label class="text-danger">'.$this->session->flashdata('error');
-	                 ?>	                
+	                  <span class="text-danger" style=" clear: both;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;margin-top:20px"> <?php echo $this->session->flashdata('error');?></span>
+             
+	                            
 	            	</div>
 
 	            	<div class="col-sm-4">
@@ -225,7 +228,7 @@
     <br> <br>
     <br>
     <br>
-     <br>
+    <br>
     <br>
    <div class="container" id="footer" style="max-width:100%;height:40px;margin-bottom:none">
       <p>CopyRight2017 Bed and Breakfast private limited.</p>

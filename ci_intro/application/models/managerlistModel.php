@@ -65,24 +65,24 @@ class managerlistModel extends CI_Model
 
   echo "<div class='box-body'><dl class='dl-horizontal'>" ; 
   foreach ($query->result() as $row) {
-    echo "<h6>complain</h6><br/>";
-    echo "<dt>Complain No</dt>";
+    echo "<h6>Renter Details</h6><br/>";
+    echo "<dt>Renter id</dt>";
     echo "<dd>".$row->Rid."</dd>";
-    echo "<dt>Province</dt>";
+    echo "<dt>First name</dt>";
     echo "<dd>".$row->firstName."</dd>";
-    echo "<dt>District</dt>";
+    echo "<dt>Last name</dt>";
     echo "<dd>".$row->lastName."</dd>";
-    echo "<dt>Local authority</dt>";
+    echo "<dt>Email</dt>";
     echo "<dd>".$row->Email."</dd>";
-    echo "<dt>Responsible</dt>";
+    echo "<dt>Telephone</dt>";
     echo "<dd>".$row->Telephone."</dd>";
-    echo "<dt>Name</dt>";
-    echo "<dd>".$row->Add1."</dd>";
     echo "<dt>Address 1</dt>";
-    echo "<dd>".$row->Add2."</dd>";
+    echo "<dd>".$row->Add1."</dd>";
     echo "<dt>Address 2</dt>";
+    echo "<dd>".$row->Add2."</dd>";
+    echo "<dt>City</dt>";
     echo "<dd>".$row->City."</dd>";
-    echo "<dt>city</dt>";
+    echo "<dt>Username</dt>";
     echo "<dd>".$row->Username."</dd>";
 
 

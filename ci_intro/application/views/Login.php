@@ -184,10 +184,10 @@
 	                <button style="float:left;border-radius:3px;border:1px solid #319db8;background-color:#005c99;height: 25px;
 	                              width:70px;font-size: 11px; "
 	                              type="submit" name="valid" vlaue="Login">Login</button>
-	                  <span class="text-danger" style=" clear: both;
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;margin-top:20px"> <?php echo $this->session->flashdata('error');?></span>
+	                <span class="text-danger" style=" clear: both;
+                                  display: inline-block;
+                                  overflow: hidden;
+                                  white-space: nowrap;margin-top:20px"> <?php echo $this->session->flashdata('error');?></span>
              
 	                            
 	            	</div>

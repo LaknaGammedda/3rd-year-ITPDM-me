@@ -44,7 +44,7 @@ background-color:#e6e6ff">
           <a href="#">Facilities</a>
         </li>
         <li>
-          <a href="#">Login</a>
+          <a href="<?php echo base_url('index.php/Mylogin/login');?>">Login</a>
         </li>
       </ul>
     </nav>
@@ -161,7 +161,7 @@ mysqli_query($db,"set character_set_results='utf8'");
 
                    <p>
 
-                    <a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/viewAll/'.$id) ?>">View all </a>
+                    <a style="background-color:#005c99;color:#FFF" class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/viewAll/'.$id) ?>">View all </a>
                   </p>
                 </td>
                 <td>
@@ -172,7 +172,7 @@ mysqli_query($db,"set character_set_results='utf8'");
               </td>
               <td>
                 <div class="dropdown">
-                  <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Edit/Delete
+                  <button style="background-color:#005c99;color:#FFF" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Edit/Delete
                     <span class="caret"></span></button>
                     <ul class="dropdown-menu">
                       <li><a  href="<?php echo base_url('index.php/renterlists/UpdateRentouts/'.$id) ?>">Edit</a>
@@ -283,7 +283,7 @@ mysqli_query($db,"set character_set_results='utf8'");
 
                <p>
 
-                <a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/viewAll/'.$id) ?>">View all </a>
+                <a style="background-color:#005c99;color:#FFF" class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/viewAll/'.$id) ?>">View all </a>
               </p>
             </td>
             <td>
@@ -294,7 +294,7 @@ mysqli_query($db,"set character_set_results='utf8'");
           </td>
           <td>
             <div class="dropdown">
-              <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Edit/Delete
+              <button style="background-color:#005c99;color:#FFF" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Edit/Delete
                 <span class="caret"></span></button>
                 <ul class="dropdown-menu">
                   <li><a  href="<?php echo base_url('index.php/Renterlists/UpdateRentouts/'.$id) ?>">Edit</a>
@@ -407,7 +407,7 @@ mysqli_query($db,"set character_set_results='utf8'");
 
              <p>
 
-              <a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/viewAll/'.$id) ?>">View all </a>
+              <a style="background-color:#005c99;color:#FFF" class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/viewAll/'.$id) ?>">View all </a>
             </p>
           </td>
           <td>
@@ -418,7 +418,7 @@ mysqli_query($db,"set character_set_results='utf8'");
         </td>
         <td>
           <div class="dropdown">
-            <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Edit/Delete
+            <button style="background-color:#005c99;color:#FFF" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Edit/Delete
               <span class="caret"></span></button>
               <ul class="dropdown-menu">
                 <li><a  href="<?php echo base_url('index.php/Renterlists/UpdateRentouts/'.$id) ?>">Edit</a>

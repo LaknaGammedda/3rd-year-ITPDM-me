@@ -27,10 +27,11 @@ class Login_model extends CI_Model
 		 $query=$this->db->get('register');
 
 		 $res=$query->result();
-		 foreach ($res as $object1) {
+		 foreach ($res as $object1)
+		  {
 		       return $object1->role;
 
-		       }
+		  }
 
 	}
 

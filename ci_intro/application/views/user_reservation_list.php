@@ -187,9 +187,9 @@
   					<p></p>
 
   					<p>
-  						<a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Lists/cancel_reservation/'.$Did) ?>">Cancel reservation</a>	
-              <a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Lists/update_reservation/'.$Did) ?>">Update reservation</a> 
-  						<a class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/viewAll/'.$id) ?>">View all </a>
+  						<a style="background-color:#005c99;color:#FFF" class="btn btn-default pull-left" href="<?php echo base_url('index.php/Lists/cancel_reservation/'.$Did) ?>">Cancel reservation</a>	
+              <a style="background-color:#005c99;color:#FFF" class="btn btn-default pull-left" href="<?php echo base_url('index.php/Lists/update_reservation/'.$Did) ?>">Update reservation</a> 
+  						<a style="background-color:#005c99;color:#FFF" class="btn btn-default pull-left" href="<?php echo base_url('index.php/Book/viewAll/'.$id) ?>">View all </a>
   					</p>
             <ul> 
               <li onclick="view_user_details('<?php echo $user_name; ?>')"><a href="#">view user details</a></li>

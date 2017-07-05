@@ -1,12 +1,49 @@
 <html >
 <head>
-<title>Add your Review</title>
+<title>Edit your Review</title>
 <link rel="stylesheet"  href="https://bootswatch.com/flatly/bootstrap.min.css">
+<link rel="stylesheet" href="<?php echo base_url('assets/log.css');?>"> 
 </head>
 
 
 
-<body>
+<body style="font-family:'Times New Roman', Times, serif;
+   font-weight:900;
+   font-size:15px;
+   color:#006;
+      background-color:#e6e6ff">
+
+       <header id="header">
+      <div class="container">
+      <div id="logo"> <img src="<?php echo base_url('Image/PicsArt_03-21-08.30.27.jpg');?>" width="60" height="60"></div>
+        <h1>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BED AND BREAKFAST
+        </h1>
+        <nav id="nav">
+          <ul>
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+            <li>
+              <a href="#">Facilities</a>
+            </li>
+            <li>
+              <a href="#">Login</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <br>
+    <br>
+    <br>
+    <br>
   
 <div class="container">
   <h2><?= $title ?></h2>
@@ -38,5 +75,9 @@
   </form>
  
 </div>
+<br><br><br><br><br><br><br><br><br><br><br>
+<div class="container" id="footer" style="max-width:100%;height:54px;margin-bottom:none">
+      <p style="margin-top:17px">CopyRight2017 Bed and Breakfast private limited.</p>
+     </div>
 </body>
 </html>

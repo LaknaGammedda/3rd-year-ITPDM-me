@@ -33,11 +33,11 @@ class Dat_Model extends CI_Model
         foreach($query1->result() as $row1) {
           $cin=$row1->CheckIn;
           $cout=$row1->CheckOut;
-          if (($cout > $startDate) && ($cin < $startDate)) {
+          if (($cout >= $startDate) && ($cin <= $startDate)) {
             $row->flag="NO";
 
           }
-          if (($cout > $endDate) && ($cin < $endDate)) {
+          if (($cout >= $endDate) && ($cin <= $endDate)) {
              $row->flag="NO";
           }
           

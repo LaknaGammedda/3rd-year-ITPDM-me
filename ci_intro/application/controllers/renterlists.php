@@ -45,6 +45,7 @@ class Renterlists extends CI_Controller
 		//edit to res table
 		$res=$this->db->update('reservation', $data);  
 		if($res){
+			 $this->load->view('UpdateImages');
 			 redirect(base_url('/index.php/Renterlists/lists'));
 		}
 		else{

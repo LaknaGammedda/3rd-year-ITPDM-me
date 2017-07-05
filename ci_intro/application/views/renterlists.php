@@ -80,6 +80,7 @@ mysqli_query($db,"set character_set_results='utf8'");
       <li class="active"><a data-toggle="tab" href="#pending">Pending list</a></li>
       <li><a data-toggle="tab" href="#accept">Accept list</a></li>
       <li><a data-toggle="tab" href="#reject">Reject list</a></li>
+      <li><a style="background-color:#005c99;color:#FFF" class="btn btn-default pull-left" href="<?php echo base_url('index.php/renterReservationList/user_reservation_list/') ?>">View Users reservations</a></li>
 
 
     </ul>

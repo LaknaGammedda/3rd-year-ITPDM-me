@@ -27,7 +27,7 @@ class Managerlists extends CI_Controller
 		$this->db->where('Rid', $Rid);  
 		$res=$this->db->update('reservation', $data);  
 		if($res){
-			redirect(base_url('/index.php/Managerlists/new_rentout'));
+			redirect(base_url('/index.php/managerlists/rentout_status'));
 		}
 		else{
 			return false;
@@ -43,7 +43,7 @@ class Managerlists extends CI_Controller
 		$this->db->where('Rid', $Rid);  
 		$res=$this->db->update('reservation', $data);  
 		if($res){
-			redirect(base_url('/index.php/Managerlists/new_rentout'));
+			redirect(base_url('/index.php/managerlists/rentout_status'));
 		}
 		else{
 			return false;

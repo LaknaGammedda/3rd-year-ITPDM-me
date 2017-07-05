@@ -49,7 +49,7 @@
     <h2 style="font-size:16px;font-weight:bold;font-family:Verdana;text-align:center;margin-bottom:1px"><?= $title ?></h2>
     <?php echo validation_errors(); ?>
 
-<?php echo  form_open_multipart('renterlists/UpdateRentouts($id)'); ?>
+<?php echo  form_open_multipart('Renterlists /UpdateRen_savedata'); ?>
 
   <!--<div class="form-group">
     <label>Renter Name :</label>
@@ -78,8 +78,8 @@
     <div class="form-group">
       <label>Number Of Rooms</label>
       
-        <select style="width:300px;height:40px" class="form-control" name="select" value="<?php echo $UpdatedData[0]->NumRooms; ?>">
-          <option>Number Of Rooms</option>
+        <select style="width:300px;height:40px" class="form-control" name="select" >
+          <option><?php echo $UpdatedData[0]->NumRooms; ?></option>
           <option>1</option>
           <option>2</option>
           <option>3</option>
@@ -90,10 +90,11 @@
        
       
     </div>
+
 <p> </p>
  <div class="form-group">
   <label>Description :</label>
-  <textarea rows="4" colums ="30" type="text" value="<?php echo $UpdatedData[0]->description; ?>" class="form-control" name="des"/></textarea>
+  <textarea rows="4" colums ="30" type="text"  class="form-control" name="des"/><?php echo $UpdatedData[0]->description; ?></textarea>
 </div>
 <!-- <label>Images :</label>
 

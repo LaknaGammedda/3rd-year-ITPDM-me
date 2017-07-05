@@ -43,6 +43,7 @@
   
 <div class="container">
   <h4 style="margin-top:100px;font-weight:bold;font-family:'Lucida Calligraphy';text-align:center"><?= $title ?></h4>
+  <?php echo $Rid;?>
   
   <?php echo validation_errors(); ?>
 
@@ -60,6 +61,7 @@
   </div> -->
   <div class="form-group">
   	<label>Title your review  </label>
+    <input type="hidden" class="form-control" name="Rid" value="<?php echo $Rid;?>" />
     <input type="text" class="form-control" name="title" placeholder="Add Title" />
   </div>
   <div class="form-group">

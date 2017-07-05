@@ -13,8 +13,9 @@
         $this-> load->view('templates/footer');
        }
 
-       public function create(){
-         $this->load->model("Post_model");
+       public function create($Rid){
+        $this->load->model("Post_model");
+        $data['Rid']=$Rid;
        	$data['title'] = 'Create Post';
        // $this-> form_validation-> set_rules('name', 'Name', 'required');
         // $this->form_validation->set_rules('title', 'Title', 'required');
@@ -33,11 +34,12 @@
       public function add(){
          $this->load->model("Post_model");
         $data['title'] = 'Create Post';
+        $Rid=$this->input->post('Rid');
        // $this-> form_validation-> set_rules('name', 'Name', 'required');
         // $this->form_validation->set_rules('title', 'Title', 'required');
         // $this->form_validation->set_rules('body', 'Body', 'required');
-         $this->Post_model->create_post();
-          redirect(posts); 
+        $this->Post_model->create_post();
+        redirect(base_url('/index.php/Book/viewAll/'.$Rid));
        //  if($this->form_validation->run()=== FALSE){
        //    $this->load->view('post/create',$data);
        //  }

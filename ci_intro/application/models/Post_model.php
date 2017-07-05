@@ -4,10 +4,11 @@
 			$this -> load -> database();
 		}
 
-		public function get_posts($slug = FALSE){
+		public function get_posts($slug,$Rid){
 			if($slug === FALSE)
 			{
 				$this->db->order_by('id' , 'DESC');
+				$this->db->where('Rid', $Rid);  
 				$query = $this -> db ->get('posts');
 				return $query-> result_array(); 
 			}
@@ -21,7 +22,7 @@
 			$slug = url_title( $this-> input ->post('title'));
 
 			$data = array(
-				   //'name' => $this -> input->post('name'),
+				   'Rid' => $this -> input->post('Rid'),
 					 'title'=>$this-> input-> post('title'),
 				    'slug' => $slug,
 				    'comment'=>$this-> input-> post('body')

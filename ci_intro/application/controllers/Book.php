@@ -26,23 +26,18 @@ class Book extends CI_Controller
 			$this->load->model("Dat_Model");
 
 			$data['res']=$this->Dat_Model->viewAll($des);
-			// $id=$data['res']->Rid;
-			// $data['id']=$id;
-			
-
-       
         
         	$data['title'] = 'Rates and Reviews';
 
-
-
-			// echo $data['res'];
 			$this->load->view('viewall',$data);
 
 
 			$this->load->model("Post_model");
-        	$data['posts'] = $this->Post_model->get_posts();
+			$Rid=$des;
+			$slug = FALSE;
+        	$data['posts'] = $this->Post_model->get_posts($slug,$Rid);
         	$this->load->view('templates/header');
+        	$data['Rid']=$Rid;
 			$this->load->view('post/index',$data);
 
 			// add review

@@ -1,6 +1,7 @@
  <br>
  <br>
  <h2><?= $title ?></h2>
+ 
 <?php foreach ($posts as $post) : ?>
 
 	<h3><?php echo $post['title']; ?></h3>
@@ -12,6 +13,9 @@
    <input type="submit" value="Delete" class="btn btn-danger">
 </form>
 
+
 <?php endforeach; ?> 
+<a style="background-color:#005c99;color:#FFF"  class="btn btn-default pull-left" href="<?php echo base_url('index.php/Posts/create/'.$Rid) ?>">New comment </a>
+ <br>
 
 

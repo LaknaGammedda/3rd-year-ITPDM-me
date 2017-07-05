@@ -64,13 +64,13 @@ input[type="Text"]
     <br>
     <br>
     <br>
-
+   
+       <?php echo validation_errors(); ?>
 <form 
 style="margin-top:120px;border:1px solid #ccc;
        box-shadow:0 1px 25px;width:450px;margin-left:400px;background-color:#FFF"
-       id="form1" name="form1" method="post" action="<?php echo base_url('index.php/PaymentsCon/Pay');?>">
-        <?php 
-       // echo $des;?>
+       id="form1" name="form1" method="post" action="<?php echo base_url('index.php/PaymentsCon/cardnumber_validation');?>">
+      
   <table width="281" border="0" align="center">
 
     <tr>
@@ -81,9 +81,10 @@ style="margin-top:120px;border:1px solid #ccc;
       <td width="170"><label for="LisName"></label>
      
       <select class="form-control select2" style="width: 100%;" name="name">           
-                      <option value="American Express">American Express</option>
-                      <option value="Master Card">Master Card</option>
+                     
+                      <option value="Master Card">MasterCard</option>
                       <option value="Visa Card">Visa Card</option>
+                       <option value="American Express">Discover</option>
                      
       </select>
       <!-- <input style="margin-top:8px" value="" type="text" name="name" id="txtName" /></td> -->
@@ -94,11 +95,16 @@ style="margin-top:120px;border:1px solid #ccc;
       <td width="170"><label for="LisNo"></label>            
       <input style="margin-top:8px" value="" type="text" name="cardnumber" id="txtNo" /></td>
     </tr>
+     <tr>
+      <td width="105"><p style="font-family:'Times New Roman', Times, serif;font-size:14px;font-weight:bold;color:#009">CSC</p></td>
+      <td width="170"><label for="LisNo"></label>            
+      <input style="margin-top:8px" value="" type="text" name="CSC" id="txtNo" /></td>
+    </tr>
 
      <tr>
       <td width="105"><p style="font-family:'Times New Roman', Times, serif;font-size:14px;font-weight:bold;color:#009">Exp Date</p></td>
       <td width="170"><label for="LisNo"></label>            
-      <input style="margin-top:8px" value="" type="text" name="exp" id="txtNo" /></td>
+      <input style="margin-top:8px" value=""   type="month" name="exp" id="txtNo" /></td>
     </tr>
   
 
